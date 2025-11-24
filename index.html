@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peacelle - Fashion for a Harmonious World</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind to use the Inter font and a custom color palette -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'peacelle-primary': '#6d28d9', // Deep Purple (for accent)
+                        'peacelle-light': '#f3e8ff', // Soft Lavender/Lilac
+                        'peacelle-neutral': '#f9fafb', // Off-White/Light Gray for background
+                        'peacelle-text': '#1f2937', // Dark Gray for readability
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Ensuring smooth transitions for hover effects */
+        .transition-all { transition: all 0.3s ease-in-out; }
+    </style>
+</head>
+<body class="font-sans bg-peacelle-neutral text-peacelle-text antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-10 bg-white/95 backdrop-blur-sm shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo/Brand Name -->
+            <a href="#" class="text-3xl font-extrabold text-peacelle-primary tracking-tight">
+                Peacelle
+            </a>
+
+            <!-- Navigation Links (Hidden on small screens) -->
+            <nav class="hidden md:flex space-x-8 text-lg">
+                <a href="#collection" class="hover:text-peacelle-primary transition-all">Collections</a>
+                <a href="#values" class="hover:text-peacelle-primary transition-all">Our Mission</a>
+                <a href="#ethos" class="hover:text-peacelle-primary transition-all">Ethos</a>
+                <a href="#contact" class="hover:text-peacelle-primary transition-all">Contact</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <a href="#shop" class="bg-peacelle-primary text-white py-2 px-6 rounded-full font-semibold shadow-lg hover:bg-peacelle-primary/80 transition-all text-base">
+                Shop Now
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section: Peace in Style -->
+        <section class="relative h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
+            <!-- Background Image Placeholder (Soft, peaceful aesthetic) -->
+            <img 
+                src="https://placehold.co/1600x900/dbeafe/1e3a8a?text=Peacelle+%E2%99%BB+Peace+In+Style" 
+                alt="Peacelle hero image: Peace in Style" 
+                class="absolute inset-0 w-full h-full object-cover brightness-75"
+                onerror="this.style.display='none'; this.parentNode.style.backgroundColor='#dbeafe';"
+            >
+            
+            <div class="relative z-10 text-center p-6 bg-white/70 backdrop-blur-sm rounded-xl shadow-2xl max-w-3xl mx-auto m-4 transition-all hover:shadow-3xl">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-peacelle-primary leading-tight mb-4">
+                    Fashion for a Harmonious World
+                </h1>
+                <p class="text-xl md:text-2xl text-peacelle-text font-medium mb-8">
+                    Wear your values. Discover conscious clothing that celebrates unity and style.
+                </p>
+                <a href="#collection" class="inline-block bg-peacelle-primary text-white text-lg py-3 px-10 rounded-full font-bold shadow-xl hover:bg-peacelle-primary/90 transition-all transform hover:scale-105">
+                    Explore Our Collections
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. Values / Mission Section -->
+        <section id="values" class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-bold mb-12 text-peacelle-text">The Peacelle Ethos</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <!-- Value 1: Sustainability -->
+                    <div class="p-8 rounded-xl shadow-lg bg-peacelle-neutral transition-all hover:shadow-2xl hover:scale-[1.02]">
+                        <svg class="w-12 h-12 text-peacelle-primary mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <h3 class="text-2xl font-semibold mb-3 text-peacelle-primary">Conscious Creation</h3>
+                        <p class="text-gray-600">
+                            We use sustainable, recycled, and organically sourced materials to minimize our global footprint. Peace begins with nature.
+                        </p>
+                    </div>
+
+                    <!-- Value 2: Harmony & Design -->
+                    <div class="p-8 rounded-xl shadow-lg bg-peacelle-neutral transition-all hover:shadow-2xl hover:scale-[1.02]">
+                        <svg class="w-12 h-12 text-peacelle-primary mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <h3 class="text-2xl font-semibold mb-3 text-peacelle-primary">Timeless Style</h3>
+                        <p class="text-gray-600">
+                            Our designs are built to last, offering classic silhouettes and serene color palettes that transcend fleeting trends.
+                        </p>
+                    </div>
+
+                    <!-- Value 3: Ethical Production -->
+                    <div class="p-8 rounded-xl shadow-lg bg-peacelle-neutral transition-all hover:shadow-2xl hover:scale-[1.02]">
+                        <svg class="w-12 h-12 text-peacelle-primary mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-3m-1.293-9.522l-1.096 1.096a1 1 0 01-1.414 0l-1.096-1.096m4.816 4.816l-1.096 1.096a1 1 0 01-1.414 0l-1.096-1.096M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15a3 3 0 100-6 3 3 0 000 6z"></path></svg>
+                        <h3 class="text-2xl font-semibold mb-3 text-peacelle-primary">Fair Trade & Care</h3>
+                        <p class="text-gray-600">
+                            We ensure every person involved in the making of Peacelle apparel is treated with dignity, respect, and fair wages.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 3. Featured Collection Showcase -->
+        <section id="collection" class="py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-12 text-peacelle-text">The Tranquility Collection</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Product 1 -->
+                    <div class="rounded-xl overflow-hidden shadow-lg bg-white group hover:shadow-2xl transition-all">
+                        <img src="https://placehold.co/600x800/e0f2fe/075985?text=Linen+Shirt" alt="Linen Shirt" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="p-4 text-center">
+                            <h4 class="text-xl font-semibold text-peacelle-text">The Serenity Linen</h4>
+                            <p class="text-peacelle-primary font-bold mt-1">$120.00</p>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="rounded-xl overflow-hidden shadow-lg bg-white group hover:shadow-2xl transition-all">
+                        <img src="https://placehold.co/600x800/ffe4e6/be185d?text=Organic+Tee" alt="Organic Cotton Tee" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="p-4 text-center">
+                            <h4 class="text-xl font-semibold text-peacelle-text">The Unity Cotton Tee</h4>
+                            <p class="text-peacelle-primary font-bold mt-1">$45.00</p>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="rounded-xl overflow-hidden shadow-lg bg-white group hover:shadow-2xl transition-all">
+                        <img src="https://placehold.co/600x800/d1fae5/065f46?text=Harmony+Dress" alt="Flowing Dress" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="p-4 text-center">
+                            <h4 class="text-xl font-semibold text-peacelle-text">The Flow Dress</h4>
+                            <p class="text-peacelle-primary font-bold mt-1">$180.00</p>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="rounded-xl overflow-hidden shadow-lg bg-white group hover:shadow-2xl transition-all">
+                        <img src="https://placehold.co/600x800/fef3c7/92400e?text=Bamboo+Pants" alt="Bamboo Trousers" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="p-4 text-center">
+                            <h4 class="text-xl font-semibold text-peacelle-text">The Balance Trouser</h4>
+                            <p class="text-peacelle-primary font-bold mt-1">$140.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12" id="shop">
+                    <a href="#" class="inline-block border-2 border-peacelle-primary text-peacelle-primary text-lg py-3 px-10 rounded-full font-bold hover:bg-peacelle-primary hover:text-white transition-all transform hover:scale-105 shadow-md">
+                        View All New Arrivals
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. CTA / Newsletter Signup -->
+        <section id="ethos" class="bg-peacelle-light py-16 md:py-24">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-bold mb-4 text-peacelle-primary">Join the Peace Movement</h2>
+                <p class="text-xl text-peacelle-text mb-8">
+                    Subscribe to our newsletter for exclusive early access, ethical updates, and style guides.
+                </p>
+                <form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
+                    <input type="email" placeholder="Enter your email address" 
+                           class="w-full px-6 py-3 rounded-full border-2 border-peacelle-primary focus:outline-none focus:ring-2 focus:ring-peacelle-primary/50"
+                           required>
+                    <button type="submit" class="bg-peacelle-primary text-white py-3 px-8 rounded-full font-semibold shadow-lg hover:bg-peacelle-primary/90 transition-all transform hover:scale-105">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-peacelle-text py-12 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Brand Info -->
+                <div>
+                    <h5 class="text-2xl font-extrabold mb-4 text-peacelle-light">Peacelle</h5>
+                    <p class="text-gray-400 text-sm">Fashion built on the pillars of ethics, style, and tranquility.</p>
+                </div>
+                <!-- Links -->
+                <div>
+                    <h6 class="font-semibold text-lg mb-4">Quick Links</h6>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-peacelle-light transition-all">About Us</a></li>
+                        <li><a href="#" class="hover:text-peacelle-light transition-all">Sizing Guide</a></li>
+                        <li><a href="#" class="hover:text-peacelle-light transition-all">FAQ</a></li>
+                        <li><a href="#" class="hover:text-peacelle-light transition-all">Shipping & Returns</a></li>
+                    </ul>
+                </div>
+                <!-- Contact -->
+                <div>
+                    <h6 class="font-semibold text-lg mb-4">Get In Touch</h6>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li>Email: <a href="mailto:hello@peacelle.com" class="hover:text-peacelle-light transition-all">hello@peacelle.com</a></li>
+                        <li>Support: <a href="tel:1234567890" class="hover:text-peacelle-light transition-all">(555) 123-4567</a></li>
+                    </ul>
+                </div>
+                <!-- Social Media Icons (Using inline SVG for a clean look) -->
+                <div>
+                    <h6 class="font-semibold text-lg mb-4">Follow Us</h6>
+                    <div class="flex space-x-4">
+                        <!-- Instagram -->
+                        <a href="#" class="w-8 h-8 rounded-full bg-peacelle-primary/50 hover:bg-peacelle-primary transition-all flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 2C4.463 2 2 4.463 2 7.5v9C2 19.537 4.463 22 7.5 22h9c3.037 0 5.5-2.463 5.5-5.5v-9C22 4.463 19.537 2 16.5 2h-9zm9 2c2.067 0 3.5 1.433 3.5 3.5v9c0 2.067-1.433 3.5-3.5 3.5h-9c-2.067 0-3.5-1.433-3.5-3.5v-9c0-2.067 1.433-3.5 3.5-3.5h9zM12 8c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zm-4 4c0 2.206 1.794 4 4 4s4-1.794 4-4-1.794-4-4-4-4 1.794-4 4zm10.5-5.5a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z"/></svg>
+                        </a>
+                        <!-- Twitter/X -->
+                        <a href="#" class="w-8 h-8 rounded-full bg-peacelle-primary/50 hover:bg-peacelle-primary transition-all flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.46 5.86c-.77.34-1.6.57-2.47.67.89-.53 1.57-1.37 1.89-2.37-.83.49-1.75.84-2.73 1.04-.78-.83-1.89-1.34-3.13-1.34-2.36 0-4.28 1.92-4.28 4.28 0 .33.04.66.12.97-3.56-.18-6.72-1.89-8.83-4.48-.37.64-.58 1.38-.58 2.16 0 1.49.76 2.81 1.92 3.58-.7-.02-1.36-.21-1.93-.53v.05c0 2.08 1.48 3.82 3.44 4.21-.36.1-.74.15-1.13.15-.27 0-.53-.02-.79-.08.55 1.71 2.14 2.95 4.03 2.99-1.47 1.15-3.32 1.83-5.32 1.83-.35 0-.69-.02-1.03-.06 1.9 1.22 4.15 1.93 6.58 1.93 7.89 0 12.21-6.55 12.21-12.21 0-.19-.01-.39-.01-.58.84-.61 1.56-1.36 2.13-2.22z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm text-gray-500">
+                &copy; <span id="year"></span> Peacelle Fashion. All rights reserved. Designed with Peace.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in the footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
