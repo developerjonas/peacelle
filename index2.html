@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peacelle | Conscious Kurthis & Sustainable Fashion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-cream': '#fffbeb',     /* Background Base */
+                        'brand-gold': '#d97706',      /* Primary Accent */
+                        'brand-clay': '#92400e',      /* Darker Earth Tone */
+                        'brand-charcoal': '#1f2937',  /* Text Main */
+                        'brand-sand': '#ffedd5',      /* Secondary Background */
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    backgroundImage: {
+                        'texture-pattern': "url('data:image/svg+xml,%3Csvg width=\\'6\\' height=\\'6\\' viewBox=\\'0 0 6 6\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cg fill=\\'%23d97706\\' fill-opacity=\\'0.05\\' fill-rule=\\'evenodd\\'%3E%3Cpath d=\\'M5 0h1v1H5zM0 5h1v1H0z\\'/%3E%3C/g%3E%3C/svg%3E')",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom smooth reveal animations */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        /* Subtle image drift */
+        .drift-img { transition: transform 0.7s ease-out; }
+        .drift-container:hover .drift-img { transform: scale(1.03); }
+    </style>
+</head>
+<body class="bg-brand-cream text-brand-charcoal font-sans antialiased selection:bg-brand-gold selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-brand-cream/90 backdrop-blur-md border-b border-brand-gold/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-black tracking-tighter text-brand-gold">
+                Peacelle<span class="text-brand-charcoal">.</span>
+            </a>
+            
+            <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide text-brand-charcoal/80">
+                <a href="shop.html" class="hover:text-brand-gold transition-colors">The Kurthi Edit</a>
+                <a href="#philosophy" class="hover:text-brand-gold transition-colors">Philosophy</a>
+                <a href="#founders" class="hover:text-brand-gold transition-colors">Our Story</a>
+            </div>
+
+            <div class="flex items-center space-x-6">
+                <a href="shop.html" class="px-5 py-2 bg-brand-gold text-white text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-brand-clay transition-colors shadow-lg shadow-brand-gold/20">
+                    Shop Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-texture-pattern">
+        <!-- Abstract Shapes -->
+        <div class="absolute top-20 right-0 w-96 h-96 bg-brand-sand rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse"></div>
+        <div class="absolute bottom-20 left-0 w-96 h-96 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
+
+        <div class="relative z-10 container mx-auto px-6 text-center">
+            <p class="text-brand-gold font-bold tracking-[0.3em] text-xs uppercase mb-6 reveal">Est. 2025 • Conscious Living</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-light leading-tight mb-8 text-brand-charcoal reveal transition-delay-100">
+                Serenity in <br/>
+                <span class="italic text-brand-gold">Every Stitch.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 font-light leading-relaxed reveal transition-delay-200">
+                Peacelle reimagines the traditional Kurthi through the lens of modern minimalism. 
+                Designed by siblings, woven for the soul.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center reveal transition-delay-300">
+                <a href="shop.html" class="group relative px-8 py-4 bg-brand-charcoal text-white rounded-sm overflow-hidden">
+                    <span class="relative z-10 font-medium">Shop The Debut Collection</span>
+                    <div class="absolute inset-0 h-full w-full bg-brand-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                </a>
+                <a href="#founders" class="px-8 py-4 border border-brand-charcoal/20 hover:border-brand-gold text-brand-charcoal hover:text-brand-gold transition-all rounded-sm">
+                    Read The Manifesto
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- The Sibling Story (USP) -->
+    <section id="founders" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="relative drift-container reveal">
+                    <!-- Placeholder for Sibling Photo -->
+                    <div class="aspect-[4/5] bg-brand-sand relative overflow-hidden rounded-sm">
+                        <img src="https://placehold.co/800x1000/ffedd5/a16207?text=Brother+%26+Sister+Portrait" alt="Founders" class="object-cover w-full h-full drift-img grayscale hover:grayscale-0 transition-all duration-700">
+                    </div>
+                    <!-- Decorative border -->
+                    <div class="absolute -bottom-6 -right-6 w-full h-full border-2 border-brand-gold/30 -z-10"></div>
+                </div>
+                
+                <div class="reveal">
+                    <span class="text-brand-gold font-serif italic text-2xl mb-4 block">The Origins</span>
+                    <h2 class="text-4xl font-serif font-bold text-brand-charcoal mb-6">Two Minds, One Vision.</h2>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Peacelle wasn't born in a boardroom. It started in our living room, born from a conversation between a brother and a sister. We noticed a gap: the traditional Kurthi was either too loud for the modern office or too plain for an evening out.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mb-8">
+                        <strong>She brings the creative soul</strong>—focusing on fluid silhouettes and tactile fabrics. 
+                        <strong>He brings the structure</strong>—ensuring ethical supply chains and honest pricing. 
+                        Together, we create balance.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="h-px w-12 bg-brand-gold"></div>
+                        <span class="font-serif italic text-brand-charcoal">Design & Logic in Harmony</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Grid -->
+    <section id="philosophy" class="py-24 bg-brand-sand/30 border-t border-brand-gold/10">
+        <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+            <h2 class="text-3xl font-serif font-bold text-brand-charcoal">The Peacelle Standard</h2>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Card 1 -->
+            <div class="bg-white p-10 rounded-sm shadow-sm hover:shadow-md transition-shadow reveal">
+                <div class="w-12 h-12 bg-brand-sand rounded-full flex items-center justify-center text-brand-gold mb-6">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3 font-serif">Earth-First Fabrics</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    We exclusively use breathable cottons, linens, and mulmul. Fabrics that let your skin breathe and return to the earth kindly.
+                </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white p-10 rounded-sm shadow-sm hover:shadow-md transition-shadow reveal transition-delay-100">
+                <div class="w-12 h-12 bg-brand-sand rounded-full flex items-center justify-center text-brand-gold mb-6">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3 font-serif">Slow Fashion Cycles</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    We don't chase trends. Our Kurthis are designed with timeless A-line cuts and neutral palettes to last years, not weeks.
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white p-10 rounded-sm shadow-sm hover:shadow-md transition-shadow reveal transition-delay-200">
+                <div class="w-12 h-12 bg-brand-sand rounded-full flex items-center justify-center text-brand-gold mb-6">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3 font-serif">Golden Hour Aesthetics</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    Inspired by the warmth of the sun. Our palette revolves around Amber, Cream, and Earth tones to bring warmth to your wardrobe.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-charcoal text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="md:col-span-1">
+                <h3 class="text-2xl font-serif font-bold text-brand-gold mb-4">Peacelle.</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Designed in harmony.<br>
+                    Crafted with conscience.<br>
+                    Worn with peace.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold uppercase tracking-widest mb-6">Shop</h4>
+                <ul class="space-y-3 text-gray-400 text-sm">
+                    <li><a href="shop.html" class="hover:text-brand-gold">All Kurthis</a></li>
+                    <li><a href="#" class="hover:text-brand-gold">New Arrivals</a></li>
+                    <li><a href="#" class="hover:text-brand-gold">Size Guide</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold uppercase tracking-widest mb-6">Company</h4>
+                <ul class="space-y-3 text-gray-400 text-sm">
+                    <li><a href="#founders" class="hover:text-brand-gold">Our Story</a></li>
+                    <li><a href="#" class="hover:text-brand-gold">Sustainability</a></li>
+                    <li><a href="#" class="hover:text-brand-gold">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold uppercase tracking-widest mb-6">Stay Connected</h4>
+                <div class="flex border-b border-gray-600 pb-2 mb-4">
+                    <input type="email" placeholder="Your email" class="bg-transparent w-full outline-none text-sm placeholder-gray-500 text-white">
+                    <button class="text-brand-gold text-xs uppercase font-bold">Join</button>
+                </div>
+                <p class="text-xs text-gray-500">Get 10% off your first Peacelle Kurthi.</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+            <p>&copy; 2024 Peacelle. All rights reserved.</p>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+                <a href="#" class="hover:text-brand-gold">Instagram</a>
+                <a href="#" class="hover:text-brand-gold">Pinterest</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Intersection Observer for reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
