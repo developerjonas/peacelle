@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Amber Linen Kurthi | Peacelle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Consistent Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-cream': '#fffbeb',      
+                        'brand-gold': '#d97706',       
+                        'brand-clay': '#92400e',       
+                        'brand-charcoal': '#1f2937',   
+                        'brand-sand': '#ffedd5',       
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Shared Background */
+        .fashion-grid-bg {
+            background-color: #fffbeb;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(255, 251, 235, 1) 20%, rgba(255, 251, 235, 0.6) 100%),
+                linear-gradient(to right, rgba(217, 119, 6, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(217, 119, 6, 0.05) 1px, transparent 1px);
+            background-size: 100% 100%, 20px 20px, 20px 20px;
+        }
+
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        /* Custom Scrollbar for Gallery */
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-brand-cream text-brand-charcoal font-sans antialiased selection:bg-brand-gold selection:text-white fashion-grid-bg min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-brand-cream/90 backdrop-blur-md border-b border-brand-gold/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-6">
+                <a href="index.html" class="text-2xl font-serif font-black tracking-tighter text-brand-gold hover:opacity-80 transition-opacity">
+                    Peacelle.
+                </a>
+                <span class="hidden md:inline-block text-brand-gold/30">|</span>
+                <a href="shop.html" class="hidden md:inline-block text-xs font-bold tracking-widest uppercase text-brand-charcoal/60 hover:text-brand-gold transition-colors">Shop All</a>
+            </div>
+            
+            <div class="flex items-center space-x-6">
+                <button onclick="toggleCart()" class="relative group">
+                    <svg class="w-6 h-6 text-brand-charcoal group-hover:text-brand-gold transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                    <span class="absolute -top-1 -right-1 w-4 h-4 bg-brand-gold text-white text-[10px] flex items-center justify-center rounded-full shadow-sm">1</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto px-6 py-6 text-xs font-medium text-gray-500 uppercase tracking-wide">
+        <a href="index.html" class="hover:text-brand-gold">Home</a> <span class="mx-2">/</span> 
+        <a href="shop.html" class="hover:text-brand-gold">The Kurthi Edit</a> <span class="mx-2">/</span> 
+        <span class="text-brand-gold">The Amber Linen</span>
+    </div>
+
+    <!-- Main Product Section -->
+    <main class="max-w-7xl mx-auto px-6 pb-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+            
+            <!-- Product Gallery -->
+            <div class="space-y-4 reveal">
+                <!-- Main Image -->
+                <div class="relative aspect-[3/4] bg-brand-sand rounded-sm overflow-hidden group">
+                    <img id="mainImage" src="https://placehold.co/800x1067/d97706/fff7ed?text=Amber+Linen+Front" alt="The Amber Linen Kurthi" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 cursor-zoom-in">
+                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-charcoal">New Season</div>
+                </div>
+                <!-- Thumbnails -->
+                <div class="grid grid-cols-4 gap-4">
+                    <button onclick="changeImage(this.src)" src="https://placehold.co/800x1067/d97706/fff7ed?text=Amber+Linen+Front" class="aspect-[3/4] bg-brand-sand rounded-sm overflow-hidden border-2 border-brand-gold">
+                        <img src="https://placehold.co/800x1067/d97706/fff7ed?text=Front" class="w-full h-full object-cover hover:opacity-80 transition-opacity">
+                    </button>
+                    <button onclick="changeImage(this.src)" src="https://placehold.co/800x1067/fffbeb/d97706?text=Detail+Shot" class="aspect-[3/4] bg-brand-sand rounded-sm overflow-hidden border-2 border-transparent hover:border-brand-gold/50 transition-all">
+                        <img src="https://placehold.co/800x1067/fffbeb/d97706?text=Detail" class="w-full h-full object-cover hover:opacity-80 transition-opacity">
+                    </button>
+                    <button onclick="changeImage(this.src)" src="https://placehold.co/800x1067/92400e/fff7ed?text=Back+View" class="aspect-[3/4] bg-brand-sand rounded-sm overflow-hidden border-2 border-transparent hover:border-brand-gold/50 transition-all">
+                        <img src="https://placehold.co/800x1067/92400e/fff7ed?text=Back" class="w-full h-full object-cover hover:opacity-80 transition-opacity">
+                    </button>
+                    <button onclick="changeImage(this.src)" src="https://placehold.co/800x1067/ffedd5/92400e?text=Lifestyle" class="aspect-[3/4] bg-brand-sand rounded-sm overflow-hidden border-2 border-transparent hover:border-brand-gold/50 transition-all">
+                        <img src="https://placehold.co/800x1067/ffedd5/92400e?text=Lifestyle" class="w-full h-full object-cover hover:opacity-80 transition-opacity">
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Details -->
+            <div class="flex flex-col justify-center reveal" style="transition-delay: 100ms;">
+                <h1 class="text-4xl lg:text-5xl font-serif font-bold text-brand-charcoal mb-4">The Amber Linen</h1>
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="text-2xl text-brand-gold font-medium">$45.00</span>
+                    <span class="px-2 py-1 bg-brand-sand text-brand-clay text-xs font-bold uppercase tracking-wider rounded-sm">In Stock</span>
+                </div>
+
+                <p class="text-gray-600 leading-relaxed font-light mb-8 border-l-2 border-brand-gold pl-4">
+                    A straight-cut Kurthi crafted from 100% pure breathable linen. Dyed in an earthy amber hue inspired by late summer sunsets. Designed for the modern woman who seeks tranquility in motion.
+                </p>
+
+                <!-- Selectors -->
+                <div class="space-y-6 mb-10">
+                    <!-- Size -->
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-sm font-bold uppercase tracking-wider">Select Size</span>
+                            <button onclick="toggleSizeGuide()" class="text-xs text-brand-gold underline hover:text-brand-clay">Size Guide</button>
+                        </div>
+                        <div class="flex gap-3">
+                            <button class="w-12 h-12 flex items-center justify-center border border-gray-200 rounded-sm hover:border-brand-gold hover:text-brand-gold transition-all">XS</button>
+                            <button class="w-12 h-12 flex items-center justify-center border border-brand-gold bg-brand-gold text-white rounded-sm shadow-md">S</button>
+                            <button class="w-12 h-12 flex items-center justify-center border border-gray-200 rounded-sm hover:border-brand-gold hover:text-brand-gold transition-all">M</button>
+                            <button class="w-12 h-12 flex items-center justify-center border border-gray-200 rounded-sm hover:border-brand-gold hover:text-brand-gold transition-all">L</button>
+                            <button class="w-12 h-12 flex items-center justify-center border border-gray-200 rounded-sm hover:border-brand-gold hover:text-brand-gold transition-all">XL</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="flex gap-4 mb-12">
+                    <button class="flex-1 bg-brand-gold text-white py-4 px-8 rounded-sm font-bold uppercase tracking-widest hover:bg-brand-clay transition-all shadow-lg shadow-brand-gold/20 transform active:scale-95">
+                        Add to Cart
+                    </button>
+                    <button class="w-14 flex items-center justify-center border border-brand-charcoal/20 rounded-sm hover:border-brand-gold hover:text-brand-gold transition-all">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </button>
+                </div>
+
+                <!-- Accordions -->
+                <div class="border-t border-brand-gold/10">
+                    <div class="group">
+                        <button class="w-full py-4 flex justify-between items-center text-left font-serif font-bold text-brand-charcoal hover:text-brand-gold transition-colors focus:outline-none" onclick="toggleAccordion('details')">
+                            Fabric & Craft
+                            <span id="icon-details" class="text-xl transition-transform duration-300">+</span>
+                        </button>
+                        <div id="content-details" class="hidden pb-4 text-sm text-gray-600 font-light leading-relaxed">
+                            <p>Hand-loomed 60 Lea Linen. Naturally dyed using plant-based pigments. Slight irregularities in the weave are a hallmark of its handmade origin.</p>
+                        </div>
+                    </div>
+                    <div class="border-t border-brand-gold/10 group">
+                        <button class="w-full py-4 flex justify-between items-center text-left font-serif font-bold text-brand-charcoal hover:text-brand-gold transition-colors focus:outline-none" onclick="toggleAccordion('care')">
+                            Care Guide
+                            <span id="icon-care" class="text-xl transition-transform duration-300">+</span>
+                        </button>
+                        <div id="content-care" class="hidden pb-4 text-sm text-gray-600 font-light leading-relaxed">
+                            <p>Hand wash cold or gentle cycle. Do not bleach. Line dry in shade to preserve color. Iron on low heat while damp.</p>
+                        </div>
+                    </div>
+                    <div class="border-t border-brand-gold/10 group">
+                        <button class="w-full py-4 flex justify-between items-center text-left font-serif font-bold text-brand-charcoal hover:text-brand-gold transition-colors focus:outline-none" onclick="toggleAccordion('shipping')">
+                            Shipping & Returns
+                            <span id="icon-shipping" class="text-xl transition-transform duration-300">+</span>
+                        </button>
+                        <div id="content-shipping" class="hidden pb-4 text-sm text-gray-600 font-light leading-relaxed">
+                            <p>Free shipping on orders over $100. Returns accepted within 14 days of delivery in original condition.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Complete The Look / Related -->
+    <section class="bg-white py-20 border-t border-brand-gold/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-serif font-bold text-brand-charcoal mb-10 text-center">Complete The Look</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Related Item 1 -->
+                <a href="#" class="group block">
+                    <div class="relative overflow-hidden aspect-[3/4] bg-brand-sand rounded-sm mb-3">
+                        <img src="https://placehold.co/600x800/fffbeb/5c4033?text=Ivory+Pants" alt="Ivory Pants" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <h3 class="font-serif font-bold text-sm text-brand-charcoal group-hover:text-brand-gold transition-colors">The Ivory Cigarette Pant</h3>
+                    <p class="text-brand-gold text-sm font-medium mt-1">$35.00</p>
+                </a>
+                
+                <!-- Related Item 2 -->
+                <a href="#" class="group block">
+                    <div class="relative overflow-hidden aspect-[3/4] bg-brand-sand rounded-sm mb-3">
+                        <img src="https://placehold.co/600x800/92400e/fff7ed?text=Terracotta+Dupatta" alt="Dupatta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <h3 class="font-serif font-bold text-sm text-brand-charcoal group-hover:text-brand-gold transition-colors">Handloom Dupatta</h3>
+                    <p class="text-brand-gold text-sm font-medium mt-1">$25.00</p>
+                </a>
+
+                <!-- Related Item 3 (Mobile hidden optional, shown here) -->
+                <a href="#" class="group block">
+                    <div class="relative overflow-hidden aspect-[3/4] bg-brand-sand rounded-sm mb-3">
+                        <img src="https://placehold.co/600x800/d97706/fff7ed?text=Gold+Earrings" alt="Earrings" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <h3 class="font-serif font-bold text-sm text-brand-charcoal group-hover:text-brand-gold transition-colors">Hammered Gold Hoops</h3>
+                    <p class="text-brand-gold text-sm font-medium mt-1">$18.00</p>
+                </a>
+
+                <!-- Related Item 4 -->
+                <a href="#" class="group block">
+                    <div class="relative overflow-hidden aspect-[3/4] bg-brand-sand rounded-sm mb-3">
+                        <img src="https://placehold.co/600x800/1f2937/fffbeb?text=Leather+Juttis" alt="Juttis" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <h3 class="font-serif font-bold text-sm text-brand-charcoal group-hover:text-brand-gold transition-colors">Tan Leather Juttis</h3>
+                    <p class="text-brand-gold text-sm font-medium mt-1">$40.00</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-charcoal text-white pt-20 pb-10 border-t-4 border-brand-gold">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="md:col-span-1">
+                <h3 class="text-2xl font-serif font-bold text-brand-gold mb-4">Peacelle.</h3>
+                <p class="text-gray-400 text-sm leading-relaxed font-light">
+                    Designed in harmony.<br>
+                    Crafted with conscience.<br>
+                    Worn with peace.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold uppercase tracking-widest mb-6 text-brand-cream">Shop</h4>
+                <ul class="space-y-3 text-gray-400 text-sm font-light">
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">All Kurthis</a></li>
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">New Arrivals</a></li>
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">Size Guide</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold uppercase tracking-widest mb-6 text-brand-cream">Company</h4>
+                <ul class="space-y-3 text-gray-400 text-sm font-light">
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">Our Story</a></li>
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">Sustainability</a></li>
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold uppercase tracking-widest mb-6 text-brand-cream">Stay Connected</h4>
+                <div class="flex border-b border-gray-600 pb-2 mb-4 focus-within:border-brand-gold transition-colors">
+                    <input type="email" placeholder="Your email" class="bg-transparent w-full outline-none text-sm placeholder-gray-500 text-white">
+                    <button class="text-brand-gold text-xs uppercase font-bold hover:text-brand-cream transition-colors">Join</button>
+                </div>
+                <p class="text-xs text-gray-500 font-light">Get 10% off your first Peacelle Kurthi.</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-light">
+            <p>&copy; <span id="year">2024</span> Peacelle. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-brand-gold transition-colors">Instagram</a>
+                <a href="#" class="hover:text-brand-gold transition-colors">Pinterest</a>
+                <a href="#" class="hover:text-brand-gold transition-colors">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Reveal Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Accordion Logic
+        function toggleAccordion(id) {
+            const content = document.getElementById(`content-${id}`);
+            const icon = document.getElementById(`icon-${id}`);
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(45deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Image Swap Logic
+        function changeImage(src) {
+            // In a real app, this would swap the high-res image source
+            // Here we just swap the src provided
+            const mainImg = document.getElementById('mainImage');
+            
+            // Just for the demo effect (fade out/in)
+            mainImg.style.opacity = '0.5';
+            setTimeout(() => {
+                // Extract text from placeholder URL to simulate changing image
+                // In reality: mainImg.src = src;
+                
+                // Hack for placeholder.co to show the clicked thumbnail's text in the main view
+                // For a real site: mainImg.src = src; 
+                
+                // For this demo, let's just make the clicked thumbnail border active
+                mainImg.style.opacity = '1';
+            }, 200);
+            
+            // Update active border on thumbnails
+            const buttons = document.querySelectorAll('.grid button');
+            buttons.forEach(btn => {
+                btn.classList.remove('border-brand-gold');
+                btn.classList.add('border-transparent');
+            });
+            event.currentTarget.classList.remove('border-transparent');
+            event.currentTarget.classList.add('border-brand-gold');
+        }
+
+        // Size Guide Toggle (Reusing the modal logic if needed, or keeping it simple)
+        function toggleSizeGuide() {
+            alert("Size guide modal would open here (same as shop page).");
+        }
+    </script>
+</body>
+</html>
