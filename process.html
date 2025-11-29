@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Process | Peacelle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'brand-cream': '#fffbeb', 'brand-gold': '#d97706', 'brand-charcoal': '#1f2937', 'brand-sand': '#ffedd5' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Merriweather', 'serif'] },
+                    animation: { 'fade-in-up': 'fadeInUp 1s ease-out forwards' },
+                    keyframes: { fadeInUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } } }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fashion-grid-bg { background-color: #fffbeb; background-image: radial-gradient(circle at 50% 50%, rgba(255, 251, 235, 1) 20%, rgba(255, 251, 235, 0.6) 100%), linear-gradient(to right, rgba(217, 119, 6, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(217, 119, 6, 0.05) 1px, transparent 1px); background-size: 100% 100%, 20px 20px, 20px 20px; }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-brand-cream text-brand-charcoal font-sans antialiased fashion-grid-bg min-h-screen">
+
+    <nav class="sticky top-0 z-50 bg-brand-cream/90 backdrop-blur-md border-b border-brand-gold/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-black tracking-tighter text-brand-gold">Peacelle.</a>
+            <a href="shop.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">Shop</a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 lg:py-20">
+        <div class="text-center mb-16 animate-fade-in-up">
+            <span class="text-brand-gold font-bold uppercase tracking-[0.2em] text-xs">Sustainability</span>
+            <h1 class="text-4xl md:text-5xl font-serif font-light text-brand-charcoal mt-4">Seed to <span class="font-bold italic text-brand-gold">Stitch.</span></h1>
+        </div>
+
+        <div class="space-y-12">
+            <!-- Step 1 -->
+            <div class="flex flex-col md:flex-row gap-8 items-start reveal">
+                <div class="w-12 h-12 bg-brand-gold text-white rounded-full flex items-center justify-center font-bold font-serif text-xl flex-shrink-0">1</div>
+                <div>
+                    <h3 class="text-2xl font-serif font-bold mb-3">Sourcing</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">We source organic cotton from rain-fed farms in Gujarat and linen from European flax fields that require zero irrigation. Every fiber is GOTS certified, ensuring no harmful pesticides touch the soil.</p>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flex flex-col md:flex-row gap-8 items-start reveal">
+                <div class="w-12 h-12 bg-brand-gold text-white rounded-full flex items-center justify-center font-bold font-serif text-xl flex-shrink-0">2</div>
+                <div>
+                    <h3 class="text-2xl font-serif font-bold mb-3">Weaving & Dyeing</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">Our fabrics are hand-loomed by artisan collectives. We use Azo-free dyes and plant-based pigments (indigo, madder root, marigold) to create our signature earth tones, recycling 90% of the water used in the process.</p>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="flex flex-col md:flex-row gap-8 items-start reveal">
+                <div class="w-12 h-12 bg-brand-gold text-white rounded-full flex items-center justify-center font-bold font-serif text-xl flex-shrink-0">3</div>
+                <div>
+                    <h3 class="text-2xl font-serif font-bold mb-3">Conscious Tailoring</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">Every Kurthi is stitched in our solar-powered studio. We practice "zero-waste" cutting techniques, turning fabric scraps into accessories or paper packaging.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-20 p-8 bg-white border border-brand-gold/10 text-center reveal">
+            <h3 class="font-serif font-bold text-xl mb-2">Our Promise</h3>
+            <p class="text-gray-500">We produce in small batches to prevent overproduction. When a design is gone, it's gone.</p>
+        </div>
+    </main>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => entries.forEach(e => e.isIntersecting && e.target.classList.add('active')));
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
