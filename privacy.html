@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <title>Privacy Policy | Peacelle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'brand-cream': '#fffbeb', 'brand-gold': '#d97706', 'brand-charcoal': '#1f2937' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Merriweather', 'serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fashion-grid-bg { background-color: #fffbeb; background-image: radial-gradient(circle at 50% 50%, rgba(255, 251, 235, 1) 20%, rgba(255, 251, 235, 0.6) 100%), linear-gradient(to right, rgba(217, 119, 6, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(217, 119, 6, 0.05) 1px, transparent 1px); background-size: 100% 100%, 20px 20px, 20px 20px; }
+    </style>
+</head>
+<body class="bg-brand-cream text-brand-charcoal font-sans antialiased fashion-grid-bg min-h-screen">
+
+    <nav class="sticky top-0 z-50 bg-brand-cream/90 backdrop-blur-md border-b border-brand-gold/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-black tracking-tighter text-brand-gold">Peacelle.</a>
+            <a href="shop.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">Shop</a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 lg:py-20">
+        <div class="bg-white p-8 md:p-16 rounded-sm border border-gray-100 shadow-sm relative">
+             <!-- Texture -->
+            <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg width=\'4\' height=\'4\' viewBox=\'0 0 4 4\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M1 3h1v1H1V3zm2-2h1v1H3V1z\' fill=\'%23000000\' fill-rule=\'evenodd\'/%3E%3C/svg%3E');"></div>
+
+            <div class="relative z-10 space-y-8">
+                <h1 class="text-3xl font-serif font-bold text-center mb-8">Privacy Policy</h1>
+                
+                <p class="text-gray-600 font-light text-sm">Your peace of mind extends to your digital privacy. This policy outlines how Peacelle collects, uses, and protects your personal information.</p>
+
+                <h3 class="font-bold text-brand-charcoal">1. Information We Collect</h3>
+                <p class="text-gray-600 font-light text-sm">We collect information you provide directly to us when you make a purchase, create an account, or sign up for our newsletter. This includes your name, email address, shipping address, and payment information.</p>
+
+                <h3 class="font-bold text-brand-charcoal">2. How We Use Your Information</h3>
+                <p class="text-gray-600 font-light text-sm">We use this information to fulfill your orders, communicate with you about your shipment, and (if you've opted in) send you updates about new collections.</p>
+
+                <h3 class="font-bold text-brand-charcoal">3. Data Protection</h3>
+                <p class="text-gray-600 font-light text-sm">We implement a variety of security measures to maintain the safety of your personal information. Your payment data is processed via secure, encrypted gateways (Stripe/PayPal) and is never stored on our servers.</p>
+
+                <h3 class="font-bold text-brand-charcoal">4. Third-Party Disclosure</h3>
+                <p class="text-gray-600 font-light text-sm">We do not sell, trade, or transfer your personally identifiable information to outside parties, except for trusted third parties who assist us in operating our website (e.g., shipping carriers), so long as those parties agree to keep this information confidential.</p>
+                
+                <div class="pt-8 mt-8 border-t border-gray-100 text-center text-xs text-gray-400">
+                    Questions? Contact us at privacy@peacelle.com
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
