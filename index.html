@@ -1,252 +1,342 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peacelle - Fashion for a Harmonious World</title>
-    <!-- Load Tailwind CSS -->
+    <title>Peacelle | Conscious Fashion & Harmony</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Fonts: Merriweather (Elegance) & Inter (Modernity) -->
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Configure Tailwind -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'peacelle-light': '#ffedd5', // Orange 200
-                        'peacelle-primary': '#d97706', // Yellow 600
-                        'peacelle-neutral': '#fff7ed', // Very light orange/white tint
-                        'peacelle-text': '#4a4a4a', // Softer dark gray
-                        'peacelle-dark': '#1f2937', 
+                        'brand-cream': '#fffbeb',      /* Background Base (Warm White) */
+                        'brand-gold': '#d97706',       /* Primary Accent (Amber-600) */
+                        'brand-clay': '#92400e',       /* Darker Earth Tone (Amber-800) */
+                        'brand-charcoal': '#1f2937',   /* Text Main (Gray-800) */
+                        'brand-sand': '#ffedd5',       /* Secondary Background (Orange-100) */
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         serif: ['Merriweather', 'serif'],
                     },
-                    spacing: {
-                        '128': '32rem',
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
                     }
                 }
             }
         }
     </script>
     <style>
-        .transition-all { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        
-        /* REIMAGINED HERO BACKGROUND
-           1. Base color: Very soft warm white.
-           2. Grid: 20px (approx 1/2cm) squares using faint primary color.
-           3. Mask: A radial gradient that fades the grid slightly in the center for text readability,
-              creating a "halo" effect without a hard box.
+        /* CUSTOM FASHION GRID BACKGROUND 
+           A refined 20px grid mimicking a pattern-cutting mat or graph paper.
+           Uses the brand-gold color with very low opacity for subtlety.
         */
         .fashion-grid-bg {
-            background-color: #fffbeb;
+            background-color: #fffbeb; /* brand-cream */
             background-image: 
-                /* Subtle Vignette/Glow center */
-                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.9) 20%, rgba(255, 255, 255, 0.4) 100%),
+                /* Central radial glow to keep text readable */
+                radial-gradient(circle at 50% 50%, rgba(255, 251, 235, 1) 20%, rgba(255, 251, 235, 0.6) 100%),
                 /* Vertical Lines */
-                linear-gradient(to right, rgba(217, 119, 6, 0.15) 1px, transparent 1px),
+                linear-gradient(to right, rgba(217, 119, 6, 0.1) 1px, transparent 1px),
                 /* Horizontal Lines */
-                linear-gradient(to bottom, rgba(217, 119, 6, 0.15) 1px, transparent 1px);
+                linear-gradient(to bottom, rgba(217, 119, 6, 0.1) 1px, transparent 1px);
             background-size: 100% 100%, 20px 20px, 20px 20px;
         }
 
-        /* Subtle floating animation for elements */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
+        /* Reveal Animation Classes */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        /* Image Drift Effect */
+        .drift-container { overflow: hidden; }
+        .drift-img { transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .drift-container:hover .drift-img { transform: scale(1.05); }
     </style>
 </head>
-<body class="font-sans text-peacelle-text antialiased selection:bg-peacelle-light selection:text-peacelle-primary">
+<body class="bg-brand-cream text-brand-charcoal font-sans antialiased selection:bg-brand-gold selection:text-white">
 
-    <!-- 
-       NAVBAR REIMAGINED 
-       - Absolute positioning puts it ON TOP of the hero.
-       - Transparent background for a seamless look.
-    -->
-    <nav class="fixed w-full z-50 transition-all duration-300 bg-brand-cream/90 backdrop-blur-md border-b border-brand-gold/10">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-brand-cream/80 backdrop-blur-md border-b border-brand-gold/10">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-serif font-black tracking-tighter text-brand-gold">
+            <!-- Brand Logo -->
+            <a href="#" class="text-2xl font-serif font-black tracking-tighter text-brand-gold hover:opacity-80 transition-opacity">
                 Peacelle<span class="text-brand-charcoal">.</span>
             </a>
             
-            <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide text-brand-charcoal/80">
-                <a href="shop.html" class="hover:text-brand-gold transition-colors">The Kurthi Edit</a>
-                <a href="#philosophy" class="hover:text-brand-gold transition-colors">Philosophy</a>
-                <a href="#founders" class="hover:text-brand-gold transition-colors">Our Story</a>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide text-brand-charcoal/80 uppercase">
+                <a href="#collection" class="hover:text-brand-gold transition-colors relative group">
+                    Collections
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-gold transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#philosophy" class="hover:text-brand-gold transition-colors relative group">
+                    Philosophy
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-gold transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#founders" class="hover:text-brand-gold transition-colors relative group">
+                    Our Story
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-gold transition-all group-hover:w-full"></span>
+                </a>
             </div>
 
+            <!-- CTA -->
             <div class="flex items-center space-x-6">
-                <a href="shop.html" class="px-5 py-2 bg-brand-gold text-white text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-brand-clay transition-colors shadow-lg shadow-brand-gold/20">
+                <a href="#shop" class="px-6 py-2 bg-brand-gold text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-brand-clay transition-all shadow-lg shadow-brand-gold/20 transform hover:-translate-y-0.5">
                     Shop Now
                 </a>
             </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-brand-gold">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
         </div>
     </nav>
 
-    <main>
-        <!-- 
-           HERO SECTION REIMAGINED
-           - Full screen height.
-           - Grid background.
-           - No container box around text.
-           - Typography driven.
-        -->
-        <section id="hero-section" class="fashion-grid-bg relative min-h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden pt-20">
+    <!-- Hero Section -->
+    <section id="hero-section" class="fashion-grid-bg relative min-h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden pt-20">
             
-            <!-- Floating Decorative Elements (Abstract Peace Symbols) -->
-            <div class="absolute top-1/4 left-10 w-24 h-24 rounded-full border border-peacelle-primary/20 animate-float hidden lg:block"></div>
-            <div class="absolute bottom-1/4 right-10 w-32 h-32 rounded-full border border-peacelle-primary/10 animate-float hidden lg:block" style="animation-delay: 1s;"></div>
+        <!-- Floating Decorative Elements (Abstract Peace Symbols) -->
+        <div class="absolute top-1/4 left-10 w-24 h-24 rounded-full border border-brand-gold/20 animate-float hidden lg:block"></div>
+        <div class="absolute bottom-1/4 right-10 w-32 h-32 rounded-full border border-brand-gold/10 animate-float hidden lg:block" style="animation-delay: 1.5s;"></div>
 
-            <!-- Main Content - Unboxed -->
-            <div class="relative z-10 max-w-4xl mx-auto space-y-8">
-                <span class="inline-block text-peacelle-primary font-bold tracking-[0.2em] uppercase text-xs md:text-sm mb-2 animate-fade-in-up">
-                    Est. 2024 — Conscious Fashion
-                </span>
-                
-                <h1 class="text-6xl md:text-8xl font-serif font-light text-peacelle-dark leading-[1.1] tracking-tight">
-                    Peace in <br>
-                    <span class="font-bold text-peacelle-primary italic">Every Stitch.</span>
-                </h1>
-                
-                <p class="text-lg md:text-2xl text-gray-600 font-light max-w-2xl mx-auto leading-relaxed">
-                    A design philosophy rooted in tranquility. <br class="hidden md:block">
-                    Sustainable fabrics for the modern soul.
-                </p>
+        <!-- Main Content -->
+        <div class="relative z-10 max-w-4xl mx-auto space-y-8">
+            <span class="inline-block text-brand-gold font-bold tracking-[0.2em] uppercase text-xs md:text-sm mb-2 animate-fade-in-up">
+                Est. 2024 — Conscious Fashion
+            </span>
+            
+            <h1 class="text-6xl md:text-8xl font-serif font-light text-brand-charcoal leading-[1.1] tracking-tight animate-fade-in-up" style="animation-delay: 0.1s;">
+                Peace in <br>
+                <span class="font-bold text-brand-gold italic">Every Stitch.</span>
+            </h1>
+            
+            <p class="text-lg md:text-2xl text-gray-600 font-light max-w-2xl mx-auto leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s;">
+                A design philosophy rooted in tranquility. <br class="hidden md:block">
+                Sustainable fabrics for the modern soul.
+            </p>
 
-                <div class="pt-8 flex flex-col md:flex-row justify-center items-center gap-6">
-                    <a href="#collection" class="group relative px-8 py-4 bg-peacelle-primary text-white rounded-full font-bold overflow-hidden shadow-lg hover:shadow-xl hover:scale-105 transition-all">
-                        <span class="relative z-10">Discover the Collection</span>
-                        <div class="absolute inset-0 h-full w-full bg-white/20 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
-                    </a>
-                    <a href="#values" class="text-peacelle-primary font-semibold border-b-2 border-transparent hover:border-peacelle-primary transition-all">
-                        Read Our Story
-                    </a>
-                </div>
+            <div class="pt-8 flex flex-col md:flex-row justify-center items-center gap-6 animate-fade-in-up" style="animation-delay: 0.3s;">
+                <a href="#collection" class="group relative px-8 py-4 bg-brand-gold text-white rounded-full font-bold overflow-hidden shadow-lg hover:shadow-xl hover:scale-105 transition-all">
+                    <span class="relative z-10">Discover the Collection</span>
+                    <div class="absolute inset-0 h-full w-full bg-white/20 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                </a>
+                <a href="#founders" class="text-brand-gold font-semibold border-b-2 border-transparent hover:border-brand-gold transition-all">
+                    Read Our Story
+                </a>
             </div>
+        </div>
 
-            <!-- Scroll Indicator -->
-            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-peacelle-primary/50">
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-brand-gold/50">
+            <a href="#founders">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
-            </div>
-        </section>
+            </a>
+        </div>
+    </section>
 
-        <!-- 2. Minimalist Values Section -->
-        <section id="values" class="py-24 bg-white relative">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-16 border-t border-peacelle-light pt-12">
-                    <!-- Value 1 -->
-                    <div class="space-y-4">
-                        <span class="text-4xl text-peacelle-primary font-serif italic">01.</span>
-                        <h3 class="text-xl font-bold text-peacelle-dark">Organic Origins</h3>
-                        <p class="text-gray-500 leading-relaxed font-light">
-                            Born from the earth. We use 100% GOTS certified organic cotton and linen, ensuring purity from seed to skin.
-                        </p>
+    <!-- The Sibling Story (Founders) -->
+    <section id="founders" class="py-24 bg-white relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <!-- Image Side -->
+                <div class="relative drift-container reveal">
+                    <div class="aspect-[4/5] bg-brand-sand relative overflow-hidden rounded-sm">
+                        <!-- Placeholder Image: Warm tones -->
+                        <img src="https://placehold.co/800x1000/ffedd5/a16207?text=Peacelle+Origins" alt="Founders" class="object-cover w-full h-full drift-img grayscale hover:grayscale-0 transition-all duration-700">
                     </div>
-                    <!-- Value 2 -->
-                    <div class="space-y-4">
-                        <span class="text-4xl text-peacelle-primary font-serif italic">02.</span>
-                        <h3 class="text-xl font-bold text-peacelle-dark">Ethical Craft</h3>
-                        <p class="text-gray-500 leading-relaxed font-light">
-                            Harmony extends to our makers. Fair wages and safe environments are the non-negotiable threads of our fabric.
-                        </p>
-                    </div>
-                    <!-- Value 3 -->
-                    <div class="space-y-4">
-                        <span class="text-4xl text-peacelle-primary font-serif italic">03.</span>
-                        <h3 class="text-xl font-bold text-peacelle-dark">Circular Future</h3>
-                        <p class="text-gray-500 leading-relaxed font-light">
-                            Designed to be loved, repaired, and eventually returned to the earth. A closed loop for a peaceful planet.
-                        </p>
+                    <!-- Decorative border frame -->
+                    <div class="absolute -bottom-4 -right-4 w-full h-full border border-brand-gold/30 -z-10"></div>
+                </div>
+                
+                <!-- Text Side -->
+                <div class="reveal">
+                    <span class="text-brand-gold font-serif italic text-2xl mb-4 block">The Origins</span>
+                    <h2 class="text-4xl font-serif font-bold text-brand-charcoal mb-6">Born from Harmony</h2>
+                    <p class="text-gray-600 leading-relaxed mb-6 font-light">
+                        Peacelle wasn't born in a boardroom. It started in our living room, born from a quiet conversation about the noise of the world and the peace found in simplicity. We noticed a gap: the traditional Kurthi was often too loud for the modern office, yet Western wear lacked the soul we craved.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mb-8 font-light">
+                        <strong>She brings the creative soul</strong>—focusing on fluid silhouettes, tactile fabrics, and the way a garment feels against the skin. 
+                        <strong>He brings the structural mind</strong>—ensuring every cut is precise, ethical, and built to last. Together, we weave balance.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="h-px w-12 bg-brand-gold"></div>
+                        <span class="font-serif italic text-brand-charcoal">Design & Logic in Harmony</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 3. Curated Lookbook (Grid Layout) -->
-        <section id="collection" class="bg-peacelle-neutral py-24">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="flex justify-between items-end mb-16">
-                    <div>
-                        <h2 class="text-4xl md:text-5xl font-serif font-bold text-peacelle-dark">SS24 / Serenity</h2>
-                        <p class="mt-4 text-gray-500">The Spring Summer collection.</p>
-                    </div>
-                    <a href="#" class="hidden md:block text-peacelle-primary font-bold hover:tracking-wide transition-all">View Full Lookbook &rarr;</a>
+    <!-- Philosophy Grid -->
+    <section id="philosophy" class="py-24 bg-brand-cream border-t border-brand-gold/10 relative overflow-hidden">
+        <!-- Subtle background texture for this section -->
+        <div class="absolute inset-0 opacity-30 pointer-events-none" style="background-image: radial-gradient(#d97706 0.5px, transparent 0.5px); background-size: 24px 24px;"></div>
+
+        <div class="max-w-7xl mx-auto px-6 text-center mb-16 relative z-10">
+            <h2 class="text-3xl font-serif font-bold text-brand-charcoal">The Peacelle Standard</h2>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10">
+            <!-- Card 1 -->
+            <div class="bg-white p-10 rounded-sm shadow-sm hover:shadow-xl transition-all duration-500 reveal group border-b-4 border-transparent hover:border-brand-gold">
+                <div class="w-14 h-14 bg-brand-sand/50 rounded-full flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-white transition-colors">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 </div>
+                <h3 class="text-xl font-bold mb-3 font-serif text-brand-charcoal">Earth-First Fabrics</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    We exclusively use breathable cottons, linens, and mulmul. Fabrics that let your skin breathe and return to the earth kindly.
+                </p>
+            </div>
 
-                <!-- Masonry-style Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Item 1 (Large) -->
-                    <div class="lg:col-span-1 group cursor-pointer">
-                        <div class="relative overflow-hidden rounded-sm h-[500px]">
-                            <img src="https://placehold.co/600x800/ffedd5/9a3412?text=The+Linen+Tunic" alt="Linen Tunic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                            <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                                <p class="text-white font-serif text-xl">The Linen Tunic</p>
-                                <p class="text-peacelle-light text-sm">$145.00</p>
-                            </div>
+            <!-- Card 2 -->
+            <div class="bg-white p-10 rounded-sm shadow-sm hover:shadow-xl transition-all duration-500 reveal group border-b-4 border-transparent hover:border-brand-gold" style="transition-delay: 100ms;">
+                <div class="w-14 h-14 bg-brand-sand/50 rounded-full flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-white transition-colors">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3 font-serif text-brand-charcoal">Slow Fashion Cycles</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    We don't chase trends. Our Kurthis are designed with timeless A-line cuts and neutral palettes to last years, not weeks.
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white p-10 rounded-sm shadow-sm hover:shadow-xl transition-all duration-500 reveal group border-b-4 border-transparent hover:border-brand-gold" style="transition-delay: 200ms;">
+                <div class="w-14 h-14 bg-brand-sand/50 rounded-full flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-white transition-colors">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3 font-serif text-brand-charcoal">Golden Hour Aesthetics</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    Inspired by the warmth of the sun. Our palette revolves around Amber, Cream, and Earth tones to bring warmth to your wardrobe.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection Preview (Added to complete the "Collection" link) -->
+    <section id="collection" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <span class="text-brand-gold font-bold uppercase tracking-widest text-xs">New Arrivals</span>
+                    <h2 class="text-3xl font-serif font-bold text-brand-charcoal mt-2">The Serenity Edit</h2>
+                </div>
+                <a href="#shop" class="hidden md:flex items-center text-brand-gold font-semibold hover:text-brand-clay transition-colors group">
+                    View All 
+                    <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Item 1 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-sm bg-brand-sand aspect-[3/4]">
+                        <img src="https://placehold.co/600x800/fffbeb/d97706?text=Linen+Kurthi" alt="Linen Kurthi" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm p-3 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                            <p class="text-brand-charcoal font-serif">The Classic Linen</p>
+                            <p class="text-brand-gold text-sm">$45.00</p>
                         </div>
                     </div>
-                    <!-- Item 2 -->
-                    <div class="lg:col-span-1 group cursor-pointer">
-                        <div class="relative overflow-hidden rounded-sm h-[500px]">
-                            <img src="https://placehold.co/600x800/fff7ed/d97706?text=Silk+Kimono" alt="Silk Kimono" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                            <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                                <p class="text-white font-serif text-xl">Silk Kimono</p>
-                                <p class="text-peacelle-light text-sm">$220.00</p>
-                            </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-sm bg-brand-sand aspect-[3/4]">
+                        <img src="https://placehold.co/600x800/ffedd5/9a3412?text=Cotton+Tunic" alt="Cotton Tunic" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm p-3 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                            <p class="text-brand-charcoal font-serif">Amber Flow Tunic</p>
+                            <p class="text-brand-gold text-sm">$52.00</p>
                         </div>
                     </div>
-                    <!-- Item 3 -->
-                    <div class="lg:col-span-1 group cursor-pointer">
-                        <div class="relative overflow-hidden rounded-sm h-[500px]">
-                            <img src="https://placehold.co/600x800/d97706/fff7ed?text=Wide+Leg+Pant" alt="Wide Leg Pant" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                            <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                                <p class="text-white font-serif text-xl">Wide Leg Pant</p>
-                                <p class="text-peacelle-light text-sm">$180.00</p>
-                            </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-sm bg-brand-sand aspect-[3/4]">
+                        <img src="https://placehold.co/600x800/fef3c7/d97706?text=Silk+Blend" alt="Silk Blend" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm p-3 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                            <p class="text-brand-charcoal font-serif">Golden Hour Silk</p>
+                            <p class="text-brand-gold text-sm">$65.00</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 4. Newsletter (Clean) -->
-        <section id="ethos" class="bg-white py-24 border-t border-peacelle-light">
-            <div class="max-w-3xl mx-auto px-6 text-center">
-                <svg class="w-12 h-12 mx-auto text-peacelle-primary mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
-                <h2 class="text-3xl font-serif font-bold text-peacelle-dark mb-4">Join the Inner Circle</h2>
-                <p class="text-gray-500 mb-10 font-light">Receive notes on mindfulness, sustainable living, and early access to our limited runs.</p>
-                <div class="flex border-b border-peacelle-dark pb-2">
-                    <input type="email" placeholder="Your email address" class="flex-grow bg-transparent outline-none placeholder-gray-400 text-peacelle-dark">
-                    <button class="text-peacelle-primary font-bold hover:text-peacelle-dark transition-colors">SUBSCRIBE</button>
+    <!-- Footer -->
+    <footer class="bg-brand-charcoal text-white pt-20 pb-10 border-t-4 border-brand-gold">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="md:col-span-1">
+                <h3 class="text-2xl font-serif font-bold text-brand-gold mb-4">Peacelle.</h3>
+                <p class="text-gray-400 text-sm leading-relaxed font-light">
+                    Designed in harmony.<br>
+                    Crafted with conscience.<br>
+                    Worn with peace.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold uppercase tracking-widest mb-6 text-brand-cream">Shop</h4>
+                <ul class="space-y-3 text-gray-400 text-sm font-light">
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">All Kurthis</a></li>
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">New Arrivals</a></li>
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">Size Guide</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold uppercase tracking-widest mb-6 text-brand-cream">Company</h4>
+                <ul class="space-y-3 text-gray-400 text-sm font-light">
+                    <li><a href="#founders" class="hover:text-brand-gold transition-colors">Our Story</a></li>
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">Sustainability</a></li>
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold uppercase tracking-widest mb-6 text-brand-cream">Stay Connected</h4>
+                <div class="flex border-b border-gray-600 pb-2 mb-4 focus-within:border-brand-gold transition-colors">
+                    <input type="email" placeholder="Your email" class="bg-transparent w-full outline-none text-sm placeholder-gray-500 text-white">
+                    <button class="text-brand-gold text-xs uppercase font-bold hover:text-brand-cream transition-colors">Join</button>
                 </div>
+                <p class="text-xs text-gray-500 font-light">Get 10% off your first Peacelle Kurthi.</p>
             </div>
-        </section>
-
-    </main>
-
-    <footer class="bg-peacelle-light py-12">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-peacelle-dark/60">
-            <div class="mb-4 md:mb-0">
-                &copy; <span id="year"></span> Peacelle. Crafted with intention.
-            </div>
-            <div class="flex space-x-6">
-                <a href="#" class="hover:text-peacelle-primary">Instagram</a>
-                <a href="#" class="hover:text-peacelle-primary">Pinterest</a>
-                <a href="#" class="hover:text-peacelle-primary">Terms</a>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-light">
+            <p>&copy; <span id="year">2024</span> Peacelle. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-brand-gold transition-colors">Instagram</a>
+                <a href="#" class="hover:text-brand-gold transition-colors">Pinterest</a>
+                <a href="#" class="hover:text-brand-gold transition-colors">Terms</a>
             </div>
         </div>
     </footer>
 
     <script>
+        // Update Year
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Simple Intersection Observer for reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
