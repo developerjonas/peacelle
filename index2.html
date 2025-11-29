@@ -63,32 +63,44 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-texture-pattern">
-        <!-- Abstract Shapes -->
-        <div class="absolute top-20 right-0 w-96 h-96 bg-brand-sand rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse"></div>
-        <div class="absolute bottom-20 left-0 w-96 h-96 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
+    <section id="hero-section" class="fashion-grid-bg relative min-h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden pt-20">
+            
+            <!-- Floating Decorative Elements (Abstract Peace Symbols) -->
+            <div class="absolute top-1/4 left-10 w-24 h-24 rounded-full border border-peacelle-primary/20 animate-float hidden lg:block"></div>
+            <div class="absolute bottom-1/4 right-10 w-32 h-32 rounded-full border border-peacelle-primary/10 animate-float hidden lg:block" style="animation-delay: 1s;"></div>
 
-        <div class="relative z-10 container mx-auto px-6 text-center">
-            <p class="text-brand-gold font-bold tracking-[0.3em] text-xs uppercase mb-6 reveal">Est. 2025 • Conscious Living</p>
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-light leading-tight mb-8 text-brand-charcoal reveal transition-delay-100">
-                Serenity in <br/>
-                <span class="italic text-brand-gold">Every Stitch.</span>
-            </h1>
-            <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 font-light leading-relaxed reveal transition-delay-200">
-                Peacelle reimagines the traditional Kurthi through the lens of modern minimalism. 
-                Designed by siblings, woven for the soul.
-            </p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center items-center reveal transition-delay-300">
-                <a href="shop.html" class="group relative px-8 py-4 bg-brand-charcoal text-white rounded-sm overflow-hidden">
-                    <span class="relative z-10 font-medium">Shop The Debut Collection</span>
-                    <div class="absolute inset-0 h-full w-full bg-brand-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
-                </a>
-                <a href="#founders" class="px-8 py-4 border border-brand-charcoal/20 hover:border-brand-gold text-brand-charcoal hover:text-brand-gold transition-all rounded-sm">
-                    Read The Manifesto
-                </a>
+            <!-- Main Content - Unboxed -->
+            <div class="relative z-10 max-w-4xl mx-auto space-y-8">
+                <span class="inline-block text-peacelle-primary font-bold tracking-[0.2em] uppercase text-xs md:text-sm mb-2 animate-fade-in-up">
+                    Est. 2024 — Conscious Fashion
+                </span>
+                
+                <h1 class="text-6xl md:text-8xl font-serif font-light text-peacelle-dark leading-[1.1] tracking-tight">
+                    Peace in <br>
+                    <span class="font-bold text-peacelle-primary italic">Every Stitch.</span>
+                </h1>
+                
+                <p class="text-lg md:text-2xl text-gray-600 font-light max-w-2xl mx-auto leading-relaxed">
+                    A design philosophy rooted in tranquility. <br class="hidden md:block">
+                    Sustainable fabrics for the modern soul.
+                </p>
+
+                <div class="pt-8 flex flex-col md:flex-row justify-center items-center gap-6">
+                    <a href="#collection" class="group relative px-8 py-4 bg-peacelle-primary text-white rounded-full font-bold overflow-hidden shadow-lg hover:shadow-xl hover:scale-105 transition-all">
+                        <span class="relative z-10">Discover the Collection</span>
+                        <div class="absolute inset-0 h-full w-full bg-white/20 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                    </a>
+                    <a href="#values" class="text-peacelle-primary font-semibold border-b-2 border-transparent hover:border-peacelle-primary transition-all">
+                        Read Our Story
+                    </a>
+                </div>
             </div>
-        </div>
-    </header>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-peacelle-primary/50">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </div>
+        </section>
 
     <!-- The Sibling Story (USP) -->
     <section id="founders" class="py-24 bg-white">
