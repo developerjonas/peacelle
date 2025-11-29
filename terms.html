@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions | Peacelle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Consistent Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-cream': '#fffbeb',      
+                        'brand-gold': '#d97706',       
+                        'brand-clay': '#92400e',       
+                        'brand-charcoal': '#1f2937',   
+                        'brand-sand': '#ffedd5',       
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Shared Background */
+        .fashion-grid-bg {
+            background-color: #fffbeb;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(255, 251, 235, 1) 20%, rgba(255, 251, 235, 0.6) 100%),
+                linear-gradient(to right, rgba(217, 119, 6, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(217, 119, 6, 0.05) 1px, transparent 1px);
+            background-size: 100% 100%, 20px 20px, 20px 20px;
+        }
+
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Stationery Effect */
+        .paper-shadow {
+            box-shadow: 
+                0 1px 1px rgba(0,0,0,0.05), 
+                0 2px 2px rgba(0,0,0,0.05), 
+                0 4px 4px rgba(0,0,0,0.05), 
+                0 8px 8px rgba(0,0,0,0.05),
+                0 16px 16px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body class="bg-brand-cream text-brand-charcoal font-sans antialiased selection:bg-brand-gold selection:text-white fashion-grid-bg min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-brand-cream/90 backdrop-blur-md border-b border-brand-gold/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-6">
+                <a href="index.html" class="text-2xl font-serif font-black tracking-tighter text-brand-gold hover:opacity-80 transition-opacity">
+                    Peacelle.
+                </a>
+                <span class="hidden md:inline-block text-brand-gold/30">|</span>
+                <a href="shop.html" class="hidden md:inline-block text-xs font-bold tracking-widest uppercase text-brand-charcoal/60 hover:text-brand-gold transition-colors">Shop All</a>
+            </div>
+            
+            <div class="flex items-center space-x-6">
+                <button onclick="toggleCart()" class="relative group">
+                    <svg class="w-6 h-6 text-brand-charcoal group-hover:text-brand-gold transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                    <span class="absolute -top-1 -right-1 w-4 h-4 bg-brand-gold text-white text-[10px] flex items-center justify-center rounded-full shadow-sm">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-6 py-12 lg:py-20">
+        
+        <!-- Header Text -->
+        <div class="text-center mb-12 animate-fade-in-up">
+            <span class="text-brand-gold font-bold uppercase tracking-[0.2em] text-xs">Policy & Agreement</span>
+            <h1 class="text-3xl md:text-5xl font-serif font-light text-brand-charcoal mt-4">
+                The Fine Print of <span class="font-bold italic text-brand-gold">Harmony.</span>
+            </h1>
+        </div>
+
+        <!-- Terms "Paper" Container -->
+        <div class="bg-white p-8 md:p-16 rounded-sm paper-shadow border border-gray-100 reveal relative overflow-hidden">
+            <!-- Subtle texture overlay -->
+            <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg width=\'4\' height=\'4\' viewBox=\'0 0 4 4\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M1 3h1v1H1V3zm2-2h1v1H3V1z\' fill=\'%23000000\' fill-rule=\'evenodd\'/%3E%3C/svg%3E');"></div>
+            
+            <div class="relative z-10 space-y-10">
+                
+                <section>
+                    <h2 class="font-serif font-bold text-xl text-brand-charcoal mb-4">1. Introduction</h2>
+                    <p class="text-gray-600 font-light leading-relaxed text-sm">
+                        Welcome to Peacelle. By accessing our website and purchasing our conscious clothing, you agree to be bound by these Terms and Conditions. These terms apply to all visitors, users, and others who access or use the Service. We believe in transparency and fairness, mirroring the ethical standards we uphold in our production.
+                    </p>
+                </section>
+
+                <hr class="border-brand-gold/10">
+
+                <section>
+                    <h2 class="font-serif font-bold text-xl text-brand-charcoal mb-4">2. Products & Handcrafted Nature</h2>
+                    <p class="text-gray-600 font-light leading-relaxed text-sm mb-4">
+                        Our Kurthis and garments are often handcrafted using organic fabrics like linen, cotton, and mulmul.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 font-light text-sm space-y-2 pl-2 marker:text-brand-gold">
+                        <li><strong>Variations:</strong> Slight irregularities in weave, color, or print are characteristic of handmade items and are not considered defects.</li>
+                        <li><strong>Color Accuracy:</strong> We have made every effort to display the colors of our products as accurately as possible. However, as computer monitors vary, we cannot guarantee that your monitor's display of any color will be completely accurate.</li>
+                        <li><strong>Availability:</strong> All orders are subject to product availability. We reserve the right to discontinue any product at any time.</li>
+                    </ul>
+                </section>
+
+                <hr class="border-brand-gold/10">
+
+                <section>
+                    <h2 class="font-serif font-bold text-xl text-brand-charcoal mb-4">3. Orders & Pricing</h2>
+                    <p class="text-gray-600 font-light leading-relaxed text-sm">
+                        We reserve the right to refuse any order you place with us. Prices for our products are subject to change without notice. We shall not be liable to you or to any third-party for any modification, price change, suspension, or discontinuance of the Service.
+                    </p>
+                </section>
+
+                <hr class="border-brand-gold/10">
+
+                <section>
+                    <h2 class="font-serif font-bold text-xl text-brand-charcoal mb-4">4. Shipping & Delivery</h2>
+                    <p class="text-gray-600 font-light leading-relaxed text-sm">
+                        Shipping times are estimates and commence from the date of shipping, rather than the date of order.
+                    </p>
+                    <div class="mt-4 bg-brand-sand/30 p-4 rounded-sm border-l-2 border-brand-gold">
+                        <p class="text-xs text-brand-charcoal font-medium">Standard processing time: 2-4 business days.</p>
+                    </div>
+                </section>
+
+                <hr class="border-brand-gold/10">
+
+                <section>
+                    <h2 class="font-serif font-bold text-xl text-brand-charcoal mb-4">5. Returns & Refunds</h2>
+                    <p class="text-gray-600 font-light leading-relaxed text-sm mb-3">
+                        We want you to find peace in your purchase. If you are not entirely satisfied, we accept returns under the following conditions:
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 font-light text-sm space-y-2 pl-2 marker:text-brand-gold">
+                        <li>The item must be unused, unwashed, and in the same condition that you received it.</li>
+                        <li>It must be in the original packaging with tags attached.</li>
+                        <li>Return requests must be initiated within 14 days of delivery.</li>
+                    </ul>
+                </section>
+
+                <hr class="border-brand-gold/10">
+
+                <section>
+                    <h2 class="font-serif font-bold text-xl text-brand-charcoal mb-4">6. Intellectual Property</h2>
+                    <p class="text-gray-600 font-light leading-relaxed text-sm">
+                        The content, organization, graphics, design, compilation, and other matters related to the Site are protected under applicable copyrights and trademarks. The copying, redistribution, use, or publication by you of any such matters or any part of the Site is strictly prohibited.
+                    </p>
+                </section>
+
+                <div class="pt-8 text-center">
+                    <p class="text-xs text-gray-400 italic">Last Updated: November 2025</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Back to Home -->
+        <div class="mt-12 text-center">
+            <a href="index.html" class="inline-flex items-center gap-2 text-sm font-bold text-brand-gold hover:text-brand-clay transition-colors uppercase tracking-widest group">
+                <svg class="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Back to Home
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-charcoal text-white pt-20 pb-10 border-t-4 border-brand-gold mt-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="md:col-span-1">
+                <h3 class="text-2xl font-serif font-bold text-brand-gold mb-4">Peacelle.</h3>
+                <p class="text-gray-400 text-sm leading-relaxed font-light">
+                    Designed in harmony.<br>
+                    Crafted with conscience.<br>
+                    Worn with peace.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold uppercase tracking-widest mb-6 text-brand-cream">Shop</h4>
+                <ul class="space-y-3 text-gray-400 text-sm font-light">
+                    <li><a href="shop.html" class="hover:text-brand-gold transition-colors">All Kurthis</a></li>
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">New Arrivals</a></li>
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">Size Guide</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold uppercase tracking-widest mb-6 text-brand-cream">Company</h4>
+                <ul class="space-y-3 text-gray-400 text-sm font-light">
+                    <li><a href="contact.html" class="hover:text-brand-gold transition-colors">Our Story</a></li>
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">Sustainability</a></li>
+                    <li><a href="contact.html" class="hover:text-brand-gold transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold uppercase tracking-widest mb-6 text-brand-cream">Stay Connected</h4>
+                <div class="flex border-b border-gray-600 pb-2 mb-4 focus-within:border-brand-gold transition-colors">
+                    <input type="email" placeholder="Your email" class="bg-transparent w-full outline-none text-sm placeholder-gray-500 text-white">
+                    <button class="text-brand-gold text-xs uppercase font-bold hover:text-brand-cream transition-colors">Join</button>
+                </div>
+                <p class="text-xs text-gray-500 font-light">Get 10% off your first Peacelle Kurthi.</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-light">
+            <p>&copy; <span id="year">2024</span> Peacelle. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-brand-gold transition-colors">Instagram</a>
+                <a href="#" class="hover:text-brand-gold transition-colors">Pinterest</a>
+                <a href="#" class="hover:text-brand-gold transition-colors">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Reveal Animation on Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        
+        function toggleCart() {
+            alert("Cart feature would open here!");
+        }
+    </script>
+</body>
+</html>
