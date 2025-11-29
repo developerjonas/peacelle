@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Peacelle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Consistent Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-cream': '#fffbeb',      
+                        'brand-gold': '#d97706',       
+                        'brand-clay': '#92400e',       
+                        'brand-charcoal': '#1f2937',   
+                        'brand-sand': '#ffedd5',       
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Shared Background */
+        .fashion-grid-bg {
+            background-color: #fffbeb;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(255, 251, 235, 1) 20%, rgba(255, 251, 235, 0.6) 100%),
+                linear-gradient(to right, rgba(217, 119, 6, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(217, 119, 6, 0.05) 1px, transparent 1px);
+            background-size: 100% 100%, 20px 20px, 20px 20px;
+        }
+
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Stationery Effect */
+        .paper-shadow {
+            box-shadow: 
+                0 1px 1px rgba(0,0,0,0.05), 
+                0 2px 2px rgba(0,0,0,0.05), 
+                0 4px 4px rgba(0,0,0,0.05), 
+                0 8px 8px rgba(0,0,0,0.05),
+                0 16px 16px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body class="bg-brand-cream text-brand-charcoal font-sans antialiased selection:bg-brand-gold selection:text-white fashion-grid-bg min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-brand-cream/90 backdrop-blur-md border-b border-brand-gold/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-6">
+                <a href="index.html" class="text-2xl font-serif font-black tracking-tighter text-brand-gold hover:opacity-80 transition-opacity">
+                    Peacelle.
+                </a>
+                <span class="hidden md:inline-block text-brand-gold/30">|</span>
+                <a href="shop.html" class="hidden md:inline-block text-xs font-bold tracking-widest uppercase text-brand-charcoal/60 hover:text-brand-gold transition-colors">Shop All</a>
+            </div>
+            
+            <div class="flex items-center space-x-6">
+                <button onclick="toggleCart()" class="relative group">
+                    <svg class="w-6 h-6 text-brand-charcoal group-hover:text-brand-gold transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                    <span class="absolute -top-1 -right-1 w-4 h-4 bg-brand-gold text-white text-[10px] flex items-center justify-center rounded-full shadow-sm">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 py-12 lg:py-20 relative">
+        
+        <!-- Header Text -->
+        <div class="text-center mb-16 space-y-4 animate-fade-in-up">
+            <span class="text-brand-gold font-bold uppercase tracking-[0.2em] text-xs">Get In Touch</span>
+            <h1 class="text-4xl md:text-6xl font-serif font-light text-brand-charcoal">
+                Weave a <span class="font-bold italic text-brand-gold">Conversation.</span>
+            </h1>
+            <p class="text-gray-600 font-light max-w-xl mx-auto">
+                Whether it's a custom order query, a collaboration idea, or just a simple hello—our studio door is always open.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+            
+            <!-- Left: Contact Details & Studio Visual -->
+            <div class="space-y-12 reveal">
+                <!-- Info Block -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <div class="group">
+                        <div class="w-12 h-12 rounded-full bg-brand-sand flex items-center justify-center text-brand-gold mb-4 group-hover:bg-brand-gold group-hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-brand-charcoal">Email Us</h3>
+                        <p class="text-sm text-gray-500 mb-2">For general inquiries & support</p>
+                        <a href="mailto:hello@peacelle.com" class="text-brand-gold font-bold underline decoration-1 underline-offset-4 hover:text-brand-clay transition-colors">hello@peacelle.com</a>
+                    </div>
+
+                    <div class="group">
+                        <div class="w-12 h-12 rounded-full bg-brand-sand flex items-center justify-center text-brand-gold mb-4 group-hover:bg-brand-gold group-hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-brand-charcoal">Visit The Studio</h3>
+                        <p class="text-sm text-gray-500 mb-2">By appointment only</p>
+                        <address class="not-italic text-brand-charcoal font-medium">
+                            12 Harmony Lane, Fabric District<br>
+                            Jaipur, Rajasthan 302001
+                        </address>
+                    </div>
+                </div>
+
+                <!-- Abstract Map / Studio Image -->
+                <div class="relative pt-8">
+                    <div class="aspect-video bg-brand-sand/50 rounded-sm overflow-hidden relative group">
+                        <!-- Abstract "Map" or Studio vibes image -->
+                        <img src="https://placehold.co/800x450/fff7ed/d97706?text=Our+Studio+Space" alt="Studio Space" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000 transform group-hover:scale-105">
+                        
+                        <!-- Floating Pin Animation -->
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-float">
+                            <svg class="w-12 h-12 text-brand-gold drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        </div>
+                    </div>
+                    <!-- Decorative Element -->
+                    <div class="absolute -bottom-4 -left-4 w-24 h-24 border-l-2 border-b-2 border-brand-gold/30"></div>
+                </div>
+            </div>
+
+            <!-- Right: The "Stationery" Form -->
+            <div class="relative reveal" style="transition-delay: 150ms;">
+                <!-- Paper Background -->
+                <div class="bg-white p-8 md:p-12 rounded-sm paper-shadow relative z-10 border border-gray-100">
+                    <!-- Subtle texture on paper -->
+                    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg width=\'4\' height=\'4\' viewBox=\'0 0 4 4\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M1 3h1v1H1V3zm2-2h1v1H3V1z\' fill=\'%23000000\' fill-rule=\'evenodd\'/%3E%3C/svg%3E');"></div>
+                    
+                    <h3 class="font-serif font-bold text-2xl mb-8 text-brand-charcoal">Send a Note</h3>
+                    
+                    <form class="space-y-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="relative group">
+                                <input type="text" id="name" name="name" class="peer w-full border-b border-gray-300 py-2 bg-transparent text-brand-charcoal focus:outline-none focus:border-brand-gold transition-colors placeholder-transparent" placeholder="Name">
+                                <label for="name" class="absolute left-0 -top-3.5 text-gray-500 text-xs transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-brand-gold peer-focus:text-xs">Your Name</label>
+                            </div>
+                            <div class="relative group">
+                                <input type="email" id="email" name="email" class="peer w-full border-b border-gray-300 py-2 bg-transparent text-brand-charcoal focus:outline-none focus:border-brand-gold transition-colors placeholder-transparent" placeholder="Email">
+                                <label for="email" class="absolute left-0 -top-3.5 text-gray-500 text-xs transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-brand-gold peer-focus:text-xs">Your Email</label>
+                            </div>
+                        </div>
+
+                        <div class="relative group">
+                            <select id="subject" name="subject" class="peer w-full border-b border-gray-300 py-2 bg-transparent text-brand-charcoal focus:outline-none focus:border-brand-gold transition-colors appearance-none cursor-pointer">
+                                <option value="" disabled selected>Select a Topic</option>
+                                <option value="order">Order Inquiry</option>
+                                <option value="custom">Custom Request</option>
+                                <option value="collab">Collaboration</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label for="subject" class="absolute left-0 -top-3.5 text-gray-500 text-xs text-brand-gold">Subject</label>
+                            <div class="absolute right-0 top-3 pointer-events-none text-brand-gold">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </div>
+                        </div>
+
+                        <div class="relative group">
+                            <textarea id="message" name="message" rows="4" class="peer w-full border-b border-gray-300 py-2 bg-transparent text-brand-charcoal focus:outline-none focus:border-brand-gold transition-colors placeholder-transparent resize-none" placeholder="Message"></textarea>
+                            <label for="message" class="absolute left-0 -top-3.5 text-gray-500 text-xs transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-brand-gold peer-focus:text-xs">Your Message</label>
+                        </div>
+
+                        <div class="pt-4 flex justify-end">
+                            <button type="button" class="px-8 py-3 bg-brand-gold text-white font-bold uppercase tracking-widest text-xs rounded-sm shadow-lg hover:bg-brand-clay transition-all transform hover:-translate-y-0.5 active:scale-95">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Decorative background elements behind form -->
+                <div class="absolute -top-4 -right-4 w-full h-full border border-brand-gold/20 -z-10 rounded-sm"></div>
+                <div class="absolute -bottom-8 -left-8 w-32 h-32 bg-brand-sand/30 rounded-full blur-2xl -z-10"></div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-charcoal text-white pt-20 pb-10 border-t-4 border-brand-gold mt-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="md:col-span-1">
+                <h3 class="text-2xl font-serif font-bold text-brand-gold mb-4">Peacelle.</h3>
+                <p class="text-gray-400 text-sm leading-relaxed font-light">
+                    Designed in harmony.<br>
+                    Crafted with conscience.<br>
+                    Worn with peace.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold uppercase tracking-widest mb-6 text-brand-cream">Shop</h4>
+                <ul class="space-y-3 text-gray-400 text-sm font-light">
+                    <li><a href="shop.html" class="hover:text-brand-gold transition-colors">All Kurthis</a></li>
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">New Arrivals</a></li>
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">Size Guide</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold uppercase tracking-widest mb-6 text-brand-cream">Company</h4>
+                <ul class="space-y-3 text-gray-400 text-sm font-light">
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">Our Story</a></li>
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">Sustainability</a></li>
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold uppercase tracking-widest mb-6 text-brand-cream">Stay Connected</h4>
+                <div class="flex border-b border-gray-600 pb-2 mb-4 focus-within:border-brand-gold transition-colors">
+                    <input type="email" placeholder="Your email" class="bg-transparent w-full outline-none text-sm placeholder-gray-500 text-white">
+                    <button class="text-brand-gold text-xs uppercase font-bold hover:text-brand-cream transition-colors">Join</button>
+                </div>
+                <p class="text-xs text-gray-500 font-light">Get 10% off your first Peacelle Kurthi.</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-light">
+            <p>&copy; <span id="year">2024</span> Peacelle. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-brand-gold transition-colors">Instagram</a>
+                <a href="#" class="hover:text-brand-gold transition-colors">Pinterest</a>
+                <a href="#" class="hover:text-brand-gold transition-colors">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Reveal Animation on Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        
+        function toggleCart() {
+            alert("Cart feature would open here!");
+        }
+    </script>
+</body>
+</html>
