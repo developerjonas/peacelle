@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | Peacelle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'brand-cream': '#fffbeb', 'brand-gold': '#d97706', 'brand-charcoal': '#1f2937', 'brand-sand': '#ffedd5' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Merriweather', 'serif'] },
+                    animation: { 'fade-in-up': 'fadeInUp 1s ease-out forwards' },
+                    keyframes: { fadeInUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } } }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fashion-grid-bg { background-color: #fffbeb; background-image: radial-gradient(circle at 50% 50%, rgba(255, 251, 235, 1) 20%, rgba(255, 251, 235, 0.6) 100%), linear-gradient(to right, rgba(217, 119, 6, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(217, 119, 6, 0.05) 1px, transparent 1px); background-size: 100% 100%, 20px 20px, 20px 20px; }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-brand-cream text-brand-charcoal font-sans antialiased fashion-grid-bg min-h-screen">
+
+    <nav class="sticky top-0 z-50 bg-brand-cream/90 backdrop-blur-md border-b border-brand-gold/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-black tracking-tighter text-brand-gold">Peacelle.</a>
+            <a href="shop.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">Shop</a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 lg:py-20">
+        <div class="text-center mb-16 animate-fade-in-up">
+            <span class="text-brand-gold font-bold uppercase tracking-[0.2em] text-xs">Our Origins</span>
+            <h1 class="text-4xl md:text-6xl font-serif font-light text-brand-charcoal mt-4">Weaving <span class="font-bold italic text-brand-gold">Peace.</span></h1>
+        </div>
+
+        <div class="space-y-16">
+            <!-- Section 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center reveal">
+                <div class="aspect-[4/5] bg-brand-sand rounded-sm overflow-hidden relative">
+                    <img src="https://placehold.co/800x1000/ffedd5/a16207?text=The+Studio" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <h2 class="font-serif font-bold text-2xl mb-4">A Quiet Beginning</h2>
+                    <p class="text-gray-600 font-light leading-relaxed mb-4">
+                        Peacelle began in 2024 as a reaction to noise. The noise of fast fashion, the noise of cluttered trends, and the noise of synthetic fabrics that trap heat and anxiety.
+                    </p>
+                    <p class="text-gray-600 font-light leading-relaxed">
+                        We wanted to create a garment that felt like a deep breath. Something you could wear to a high-stakes meeting and a slow Sunday brunch without changing a thing.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Quote -->
+            <div class="border-t border-b border-brand-gold/10 py-16 text-center reveal">
+                <blockquote class="font-serif text-2xl italic text-brand-gold max-w-2xl mx-auto">
+                    "We believe that what you wear affects how you feel, and how you feel affects how you treat the world."
+                </blockquote>
+            </div>
+
+            <!-- Founders -->
+            <div class="reveal">
+                <h2 class="font-serif font-bold text-2xl mb-8 text-center">The Creators</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-sm shadow-sm border border-gray-100 text-center">
+                        <div class="w-24 h-24 bg-brand-sand rounded-full mx-auto mb-4 overflow-hidden">
+                            <img src="https://placehold.co/200x200/d97706/fff?text=She" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="font-bold text-lg">Anya</h3>
+                        <p class="text-xs uppercase tracking-widest text-brand-gold mb-4">Creative Director</p>
+                        <p class="text-sm text-gray-500">The dreamer who obsesses over the drape of a hem and the softness of a wash.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-sm shadow-sm border border-gray-100 text-center">
+                        <div class="w-24 h-24 bg-brand-sand rounded-full mx-auto mb-4 overflow-hidden">
+                            <img src="https://placehold.co/200x200/1f2937/fff?text=He" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="font-bold text-lg">Rohan</h3>
+                        <p class="text-xs uppercase tracking-widest text-brand-gold mb-4">Operations Lead</p>
+                        <p class="text-sm text-gray-500">The structuralist who ensures our ethics match our aesthetics in every supply chain step.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => entries.forEach(e => e.isIntersecting && e.target.classList.add('active')));
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
