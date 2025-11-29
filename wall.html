@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Map & Gallery | Peacelle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-cream': '#fffbeb',      
+                        'brand-gold': '#d97706',       
+                        'brand-clay': '#92400e',       
+                        'brand-charcoal': '#1f2937',   
+                        'brand-sand': '#ffedd5',       
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fashion-grid-bg {
+            background-color: #fffbeb;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(255, 251, 235, 1) 20%, rgba(255, 251, 235, 0.6) 100%),
+                linear-gradient(to right, rgba(217, 119, 6, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(217, 119, 6, 0.05) 1px, transparent 1px);
+            background-size: 100% 100%, 20px 20px, 20px 20px;
+        }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-brand-cream text-brand-charcoal font-sans antialiased fashion-grid-bg min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-brand-cream/90 backdrop-blur-md border-b border-brand-gold/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-black tracking-tighter text-brand-gold">Peacelle.</a>
+            <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Project Gallery</span>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 py-12 lg:py-20">
+        
+        <div class="text-center mb-16 animate-fade-in-up">
+            <span class="text-brand-gold font-bold uppercase tracking-[0.2em] text-xs">Overview</span>
+            <h1 class="text-4xl md:text-5xl font-serif font-light text-brand-charcoal mt-4">
+                Site <span class="font-bold italic text-brand-gold">Index.</span>
+            </h1>
+            <p class="text-gray-600 mt-4 font-light max-w-2xl mx-auto">A directory of all pages currently built for the Peacelle brand experience.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 reveal">
+            
+            <!-- Core Experience -->
+            <div class="col-span-full mb-4">
+                <h3 class="text-xs font-bold uppercase tracking-widest text-brand-gold border-b border-brand-gold/20 pb-2 mb-6">Core Experience</h3>
+            </div>
+
+            <a href="index.html" class="group bg-white p-6 rounded-sm border border-gray-100 hover:border-brand-gold transition-all shadow-sm hover:shadow-md">
+                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">🏠</div>
+                <h3 class="font-serif font-bold text-brand-charcoal text-lg group-hover:text-brand-gold">Home</h3>
+                <code class="text-xs text-gray-400 mt-2 block">index.html</code>
+            </a>
+
+            <a href="shop.html" class="group bg-white p-6 rounded-sm border border-gray-100 hover:border-brand-gold transition-all shadow-sm hover:shadow-md">
+                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">🛍️</div>
+                <h3 class="font-serif font-bold text-brand-charcoal text-lg group-hover:text-brand-gold">Shop Collection</h3>
+                <code class="text-xs text-gray-400 mt-2 block">shop.html</code>
+            </a>
+
+            <a href="product.html" class="group bg-white p-6 rounded-sm border border-gray-100 hover:border-brand-gold transition-all shadow-sm hover:shadow-md">
+                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">👗</div>
+                <h3 class="font-serif font-bold text-brand-charcoal text-lg group-hover:text-brand-gold">Product Detail</h3>
+                <code class="text-xs text-gray-400 mt-2 block">product.html</code>
+            </a>
+
+            <!-- Brand Story -->
+            <div class="col-span-full mt-8 mb-4">
+                <h3 class="text-xs font-bold uppercase tracking-widest text-brand-gold border-b border-brand-gold/20 pb-2 mb-6">Brand & Story</h3>
+            </div>
+
+            <a href="about.html" class="group bg-white p-6 rounded-sm border border-gray-100 hover:border-brand-gold transition-all shadow-sm hover:shadow-md">
+                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">📖</div>
+                <h3 class="font-serif font-bold text-brand-charcoal text-lg group-hover:text-brand-gold">About Us</h3>
+                <code class="text-xs text-gray-400 mt-2 block">about.html</code>
+            </a>
+
+            <a href="process.html" class="group bg-white p-6 rounded-sm border border-gray-100 hover:border-brand-gold transition-all shadow-sm hover:shadow-md">
+                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">🧵</div>
+                <h3 class="font-serif font-bold text-brand-charcoal text-lg group-hover:text-brand-gold">The Process</h3>
+                <code class="text-xs text-gray-400 mt-2 block">process.html</code>
+            </a>
+
+            <a href="contact.html" class="group bg-white p-6 rounded-sm border border-gray-100 hover:border-brand-gold transition-all shadow-sm hover:shadow-md">
+                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">💌</div>
+                <h3 class="font-serif font-bold text-brand-charcoal text-lg group-hover:text-brand-gold">Contact</h3>
+                <code class="text-xs text-gray-400 mt-2 block">contact.html</code>
+            </a>
+
+            <!-- Customer Care -->
+            <div class="col-span-full mt-8 mb-4">
+                <h3 class="text-xs font-bold uppercase tracking-widest text-brand-gold border-b border-brand-gold/20 pb-2 mb-6">Customer Care</h3>
+            </div>
+
+            <a href="size.html" class="group bg-white p-6 rounded-sm border border-gray-100 hover:border-brand-gold transition-all shadow-sm hover:shadow-md">
+                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">📏</div>
+                <h3 class="font-serif font-bold text-brand-charcoal text-lg group-hover:text-brand-gold">Size Guide</h3>
+                <code class="text-xs text-gray-400 mt-2 block">size.html</code>
+            </a>
+
+            <a href="faq.html" class="group bg-white p-6 rounded-sm border border-gray-100 hover:border-brand-gold transition-all shadow-sm hover:shadow-md">
+                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">❓</div>
+                <h3 class="font-serif font-bold text-brand-charcoal text-lg group-hover:text-brand-gold">FAQ</h3>
+                <code class="text-xs text-gray-400 mt-2 block">faq.html</code>
+            </a>
+
+            <a href="returns.html" class="group bg-white p-6 rounded-sm border border-gray-100 hover:border-brand-gold transition-all shadow-sm hover:shadow-md">
+                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">📦</div>
+                <h3 class="font-serif font-bold text-brand-charcoal text-lg group-hover:text-brand-gold">Returns</h3>
+                <code class="text-xs text-gray-400 mt-2 block">returns.html</code>
+            </a>
+
+            <!-- Functional / Account -->
+            <div class="col-span-full mt-8 mb-4">
+                <h3 class="text-xs font-bold uppercase tracking-widest text-brand-gold border-b border-brand-gold/20 pb-2 mb-6">Commerce & Functional</h3>
+            </div>
+
+            <a href="user.html" class="group bg-white p-6 rounded-sm border border-gray-100 hover:border-brand-gold transition-all shadow-sm hover:shadow-md">
+                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">👤</div>
+                <h3 class="font-serif font-bold text-brand-charcoal text-lg group-hover:text-brand-gold">User Account</h3>
+                <code class="text-xs text-gray-400 mt-2 block">user.html</code>
+            </a>
+
+            <a href="cart.html" class="group bg-white p-6 rounded-sm border border-gray-100 hover:border-brand-gold transition-all shadow-sm hover:shadow-md">
+                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">🛒</div>
+                <h3 class="font-serif font-bold text-brand-charcoal text-lg group-hover:text-brand-gold">Cart</h3>
+                <code class="text-xs text-gray-400 mt-2 block">cart.html</code>
+            </a>
+
+            <a href="check.html" class="group bg-white p-6 rounded-sm border border-gray-100 hover:border-brand-gold transition-all shadow-sm hover:shadow-md">
+                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">💳</div>
+                <h3 class="font-serif font-bold text-brand-charcoal text-lg group-hover:text-brand-gold">Checkout</h3>
+                <code class="text-xs text-gray-400 mt-2 block">check.html</code>
+            </a>
+
+            <!-- Legal & System -->
+            <div class="col-span-full mt-8 mb-4">
+                <h3 class="text-xs font-bold uppercase tracking-widest text-brand-gold border-b border-brand-gold/20 pb-2 mb-6">Legal & System</h3>
+            </div>
+
+            <a href="terms.html" class="group bg-white p-6 rounded-sm border border-gray-100 hover:border-brand-gold transition-all shadow-sm hover:shadow-md">
+                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">📜</div>
+                <h3 class="font-serif font-bold text-brand-charcoal text-lg group-hover:text-brand-gold">Terms</h3>
+                <code class="text-xs text-gray-400 mt-2 block">terms.html</code>
+            </a>
+
+            <a href="privacy.html" class="group bg-white p-6 rounded-sm border border-gray-100 hover:border-brand-gold transition-all shadow-sm hover:shadow-md">
+                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">🔒</div>
+                <h3 class="font-serif font-bold text-brand-charcoal text-lg group-hover:text-brand-gold">Privacy Policy</h3>
+                <code class="text-xs text-gray-400 mt-2 block">privacy.html</code>
+            </a>
+
+            <a href="404.html" class="group bg-white p-6 rounded-sm border border-gray-100 hover:border-brand-gold transition-all shadow-sm hover:shadow-md">
+                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">⚠️</div>
+                <h3 class="font-serif font-bold text-brand-charcoal text-lg group-hover:text-brand-gold">404 Error</h3>
+                <code class="text-xs text-gray-400 mt-2 block">404.html</code>
+            </a>
+
+        </div>
+
+    </main>
+
+    <script>
+        // Simple Intersection Observer for reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
