@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account | Peacelle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-cream': '#fffbeb',      
+                        'brand-gold': '#d97706',       
+                        'brand-clay': '#92400e',       
+                        'brand-charcoal': '#1f2937',   
+                        'brand-sand': '#ffedd5',       
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fashion-grid-bg {
+            background-color: #fffbeb;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(255, 251, 235, 1) 20%, rgba(255, 251, 235, 0.6) 100%),
+                linear-gradient(to right, rgba(217, 119, 6, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(217, 119, 6, 0.05) 1px, transparent 1px);
+            background-size: 100% 100%, 20px 20px, 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-brand-cream text-brand-charcoal font-sans antialiased selection:bg-brand-gold selection:text-white fashion-grid-bg min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-brand-cream/90 backdrop-blur-md border-b border-brand-gold/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-6">
+                <a href="index.html" class="text-2xl font-serif font-black tracking-tighter text-brand-gold">Peacelle.</a>
+            </div>
+            <div class="flex items-center space-x-6 text-sm font-bold uppercase tracking-widest text-brand-gold">
+                <a href="shop.html">Shop</a>
+                <a href="index.html">Log Out</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <h1 class="text-4xl font-serif font-light text-brand-charcoal mb-2">Welcome back, <span class="font-bold italic text-brand-gold">Elena.</span></h1>
+        <p class="text-gray-500 mb-12">Member since 2024</p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <!-- Sidebar -->
+            <aside class="space-y-2">
+                <button class="w-full text-left px-4 py-3 bg-white border-l-4 border-brand-gold font-bold text-brand-charcoal shadow-sm">My Orders</button>
+                <button class="w-full text-left px-4 py-3 hover:bg-white border-l-4 border-transparent hover:border-brand-gold/30 text-gray-500 transition-all">Address Book</button>
+                <button class="w-full text-left px-4 py-3 hover:bg-white border-l-4 border-transparent hover:border-brand-gold/30 text-gray-500 transition-all">Account Details</button>
+                <button class="w-full text-left px-4 py-3 hover:bg-white border-l-4 border-transparent hover:border-brand-gold/30 text-gray-500 transition-all">Wishlist</button>
+            </aside>
+
+            <!-- Content Area -->
+            <div class="lg:col-span-2 space-y-8">
+                <div class="bg-white p-8 rounded-sm shadow-sm border border-gray-100">
+                    <h2 class="font-serif font-bold text-xl mb-6">Recent Orders</h2>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm">
+                            <thead class="border-b border-gray-100 text-gray-400 uppercase tracking-wider font-normal">
+                                <tr>
+                                    <th class="pb-3">Order</th>
+                                    <th class="pb-3">Date</th>
+                                    <th class="pb-3">Status</th>
+                                    <th class="pb-3 text-right">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-50">
+                                <tr class="group hover:bg-brand-sand/10 transition-colors">
+                                    <td class="py-4 font-bold text-brand-charcoal">#PEA-8821</td>
+                                    <td class="py-4 text-gray-500">Oct 24, 2025</td>
+                                    <td class="py-4"><span class="px-2 py-1 bg-green-100 text-green-700 rounded-sm text-xs font-bold uppercase">Delivered</span></td>
+                                    <td class="py-4 text-right font-medium">$125.00</td>
+                                </tr>
+                                <tr class="group hover:bg-brand-sand/10 transition-colors">
+                                    <td class="py-4 font-bold text-brand-charcoal">#PEA-8902</td>
+                                    <td class="py-4 text-gray-500">Nov 02, 2025</td>
+                                    <td class="py-4"><span class="px-2 py-1 bg-brand-sand text-brand-gold rounded-sm text-xs font-bold uppercase">Processing</span></td>
+                                    <td class="py-4 text-right font-medium">$85.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Addresses Preview -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-sm shadow-sm border border-gray-100 relative group">
+                        <h3 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Default Shipping</h3>
+                        <p class="text-brand-charcoal font-medium">Elena Fisher</p>
+                        <p class="text-gray-500 text-sm mt-1">12 Harmony Lane<br>Austin, TX 78701<br>United States</p>
+                        <button class="text-xs text-brand-gold font-bold uppercase mt-4 underline decoration-1 underline-offset-4">Edit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-brand-charcoal text-white py-8 mt-12 text-center text-xs">
+        <p>&copy; 2025 Peacelle.</p>
+    </footer>
+</body>
+</html>
