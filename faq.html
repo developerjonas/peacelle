@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions | Peacelle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'brand-cream': '#fffbeb', 'brand-gold': '#d97706', 'brand-charcoal': '#1f2937', 'brand-sand': '#ffedd5' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Merriweather', 'serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fashion-grid-bg { background-color: #fffbeb; background-image: radial-gradient(circle at 50% 50%, rgba(255, 251, 235, 1) 20%, rgba(255, 251, 235, 0.6) 100%), linear-gradient(to right, rgba(217, 119, 6, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(217, 119, 6, 0.05) 1px, transparent 1px); background-size: 100% 100%, 20px 20px, 20px 20px; }
+    </style>
+</head>
+<body class="bg-brand-cream text-brand-charcoal font-sans antialiased fashion-grid-bg min-h-screen">
+
+    <nav class="sticky top-0 z-50 bg-brand-cream/90 backdrop-blur-md border-b border-brand-gold/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-black tracking-tighter text-brand-gold">Peacelle.</a>
+            <a href="shop.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">Shop</a>
+        </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-6 py-12 lg:py-20">
+        <h1 class="text-4xl font-serif font-light text-center mb-12">Questions?</h1>
+
+        <div class="space-y-4">
+            <!-- FAQ Item 1 -->
+            <div class="bg-white p-6 rounded-sm border border-gray-100 cursor-pointer group" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center">
+                    <h3 class="font-bold text-brand-charcoal group-hover:text-brand-gold transition-colors">Do you ship internationally?</h3>
+                    <span class="text-xl text-brand-gold transform transition-transform duration-300">+</span>
+                </div>
+                <div class="hidden mt-4 text-gray-600 font-light text-sm leading-relaxed">
+                    Yes, we ship peace worldwide. International shipping typically takes 7-14 business days depending on customs processing in your country.
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="bg-white p-6 rounded-sm border border-gray-100 cursor-pointer group" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center">
+                    <h3 class="font-bold text-brand-charcoal group-hover:text-brand-gold transition-colors">How do I care for my linen Kurthi?</h3>
+                    <span class="text-xl text-brand-gold transform transition-transform duration-300">+</span>
+                </div>
+                <div class="hidden mt-4 text-gray-600 font-light text-sm leading-relaxed">
+                    Linen loves water. Hand wash or machine wash on a gentle cycle with cold water. Avoid the dryer to prevent shrinkage. Iron while damp for a crisp look, or embrace the natural wrinkles for a relaxed vibe.
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="bg-white p-6 rounded-sm border border-gray-100 cursor-pointer group" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center">
+                    <h3 class="font-bold text-brand-charcoal group-hover:text-brand-gold transition-colors">What if my size is out of stock?</h3>
+                    <span class="text-xl text-brand-gold transform transition-transform duration-300">+</span>
+                </div>
+                <div class="hidden mt-4 text-gray-600 font-light text-sm leading-relaxed">
+                    Because we produce in small batches to reduce waste, restocks aren't guaranteed. You can sign up for notifications on the product page to be alerted if we do a reprint.
+                </div>
+            </div>
+            
+             <!-- FAQ Item 4 -->
+            <div class="bg-white p-6 rounded-sm border border-gray-100 cursor-pointer group" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center">
+                    <h3 class="font-bold text-brand-charcoal group-hover:text-brand-gold transition-colors">Is your packaging sustainable?</h3>
+                    <span class="text-xl text-brand-gold transform transition-transform duration-300">+</span>
+                </div>
+                <div class="hidden mt-4 text-gray-600 font-light text-sm leading-relaxed">
+                   Absolutely. We use 100% recycled paper mailers and compostable garment bags. Our hang tags are made from seed paper – plant them to grow wildflowers!
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleFaq(el) {
+            const content = el.querySelector('div.hidden, div.block');
+            const icon = el.querySelector('span');
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                content.classList.add('block');
+                icon.style.transform = 'rotate(45deg)';
+            } else {
+                content.classList.add('hidden');
+                content.classList.remove('block');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+</body>
+</html>
