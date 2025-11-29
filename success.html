@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Confirmed | Peacelle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'brand-cream': '#fffbeb', 'brand-gold': '#d97706', 'brand-charcoal': '#1f2937' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Merriweather', 'serif'] },
+                    animation: { 'fade-in-up': 'fadeInUp 1s ease-out forwards' },
+                    keyframes: { fadeInUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } } }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-cream text-brand-charcoal font-sans antialiased min-h-screen flex items-center justify-center p-6">
+
+    <div class="max-w-xl w-full bg-white p-10 md:p-16 rounded-sm shadow-xl border border-brand-gold/10 text-center animate-fade-in-up">
+        
+        <!-- Animated Checkmark -->
+        <div class="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-8">
+            <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        </div>
+
+        <h1 class="font-serif font-bold text-3xl mb-4 text-brand-charcoal">Thank you, Elena!</h1>
+        <p class="text-gray-500 font-light mb-8">Your order has been received and is being prepared with care.</p>
+
+        <div class="bg-brand-cream/50 p-6 rounded-sm mb-8 text-left border border-brand-gold/10">
+            <div class="flex justify-between text-sm mb-2">
+                <span class="text-gray-500">Order Number:</span>
+                <span class="font-bold text-brand-charcoal">#PEA-9281</span>
+            </div>
+            <div class="flex justify-between text-sm mb-2">
+                <span class="text-gray-500">Date:</span>
+                <span class="font-medium">Nov 29, 2025</span>
+            </div>
+            <div class="flex justify-between text-sm">
+                <span class="text-gray-500">Total:</span>
+                <span class="font-medium">$83.00</span>
+            </div>
+        </div>
+
+        <p class="text-xs text-gray-400 mb-8">You will receive an email confirmation shortly at elena@example.com</p>
+
+        <a href="index.html" class="inline-block px-8 py-3 bg-brand-gold text-white font-bold uppercase tracking-widest text-xs rounded-sm hover:bg-[#92400e] transition-all shadow-lg">
+            Return to Home
+        </a>
+    </div>
+
+</body>
+</html>
