@@ -71,31 +71,25 @@
        - Absolute positioning puts it ON TOP of the hero.
        - Transparent background for a seamless look.
     -->
-    <header class="absolute top-0 w-full z-50">
-        <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
-            <!-- Brand -->
-            <a href="#" class="text-2xl md:text-3xl font-black font-serif text-peacelle-primary tracking-tighter hover:opacity-80 transition-opacity">
-                Peacelle.
-            </a>
-
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex space-x-10 text-sm font-semibold tracking-wide uppercase text-peacelle-dark/80">
-                <a href="#collection" class="hover:text-peacelle-primary transition-colors">Collection</a>
-                <a href="#values" class="hover:text-peacelle-primary transition-colors">Manifesto</a>
-                <a href="#ethos" class="hover:text-peacelle-primary transition-colors">Journal</a>
-            </nav>
-
-            <!-- Minimalist Action -->
-            <a href="shop.html" class="hidden md:inline-block border border-peacelle-primary text-peacelle-primary px-6 py-2 rounded-full text-sm font-bold hover:bg-peacelle-primary hover:text-white transition-all">
-                Shop
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-brand-cream/90 backdrop-blur-md border-b border-brand-gold/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-black tracking-tighter text-brand-gold">
+                Peacelle<span class="text-brand-charcoal">.</span>
             </a>
             
-            <!-- Mobile Menu Icon (Visual only) -->
-            <button class="md:hidden text-peacelle-primary">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
+            <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide text-brand-charcoal/80">
+                <a href="shop.html" class="hover:text-brand-gold transition-colors">The Kurthi Edit</a>
+                <a href="#philosophy" class="hover:text-brand-gold transition-colors">Philosophy</a>
+                <a href="#founders" class="hover:text-brand-gold transition-colors">Our Story</a>
+            </div>
+
+            <div class="flex items-center space-x-6">
+                <a href="shop.html" class="px-5 py-2 bg-brand-gold text-white text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-brand-clay transition-colors shadow-lg shadow-brand-gold/20">
+                    Shop Now
+                </a>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <main>
         <!-- 
